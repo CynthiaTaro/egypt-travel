@@ -1,0 +1,3072 @@
+{
+  "$schema": "./schemas/trip-data.schema.json",
+  "schemaVersion": "2.0-lite",
+  "config": {
+    "schemaVersion": "1.0.0",
+    "modules": {
+      "flights": true,
+      "overview": false,
+      "itinerary": true,
+      "todo": true,
+      "driving": false,
+      "ledger": true
+    },
+    "language": "zh-CN",
+    "persistence": {
+      "mode": "local"
+    }
+  },
+  "metadata": {
+    "tripId": "egypt-2026-09",
+    "title": "埃及旅行计划",
+    "language": "zh-CN",
+    "assets": {}
+  },
+  "trip": {
+    "status": "draft",
+    "startDate": "2026-09-23",
+    "endDate": "2026-10-04",
+    "dayCount": 12,
+    "nightCountAway": 11,
+    "countries": [
+      "中国",
+      "沙特阿拉伯",
+      "埃及"
+    ],
+    "primaryDestinationCountries": [
+      "埃及"
+    ],
+    "citiesAndAreas": [
+      "开罗",
+      "吉萨",
+      "卢克索",
+      "赫尔格达"
+    ],
+    "routeSummary": "北京 → 利雅得转机 → 开罗 → 卢克索 → 赫尔格达 → 开罗 → 利雅得转机 → 北京",
+    "groupSize": 2,
+    "heroTitle": "埃及"
+  },
+  "flightJourneys": [
+    {
+      "id": "journey-outbound",
+      "comfortItems": [
+        "眼罩",
+        "耳塞",
+        "颈枕",
+        "腰垫",
+        "弹力袜",
+        "一次性拖鞋",
+        "加湿口罩",
+        "保温杯",
+        "充电宝（随身，不托运）",
+        "手机充电线"
+      ],
+      "comfortNote": "长途飞行每1—2小时活动腿脚并适量补水；充电宝必须放随身行李。"
+    },
+    {
+      "id": "journey-return",
+      "comfortItems": [
+        "眼罩",
+        "耳塞",
+        "颈枕",
+        "腰垫",
+        "弹力袜",
+        "一次性拖鞋",
+        "加湿口罩",
+        "保温杯",
+        "充电宝（随身，不托运）",
+        "手机充电线"
+      ],
+      "comfortNote": "长途飞行每1—2小时活动腿脚并适量补水；充电宝必须放随身行李。"
+    }
+  ],
+  "flights": [
+    {
+      "id": "sv889",
+      "journeyId": "journey-outbound",
+      "sequence": 1,
+      "airline": {
+        "nameZh": "沙特阿拉伯航空"
+      },
+      "flightNumber": "SV889",
+      "departure": {
+        "airportCode": "PKX",
+        "city": "北京",
+        "date": "2026-09-23",
+        "time": "20:05",
+        "utcOffset": "+08:00"
+      },
+      "arrival": {
+        "airportCode": "RUH",
+        "city": "利雅得",
+        "date": "2026-09-24",
+        "time": "01:15",
+        "utcOffset": "+03:00"
+      }
+    },
+    {
+      "id": "sv311",
+      "journeyId": "journey-outbound",
+      "sequence": 2,
+      "airline": {
+        "nameZh": "沙特阿拉伯航空"
+      },
+      "flightNumber": "SV311",
+      "departure": {
+        "airportCode": "RUH",
+        "city": "利雅得",
+        "date": "2026-09-24",
+        "time": "07:25",
+        "utcOffset": "+03:00"
+      },
+      "arrival": {
+        "airportCode": "CAI",
+        "city": "开罗",
+        "date": "2026-09-24",
+        "time": "10:10",
+        "utcOffset": "+03:00"
+      }
+    },
+    {
+      "id": "sv312",
+      "journeyId": "journey-return",
+      "sequence": 1,
+      "airline": {
+        "nameZh": "沙特阿拉伯航空"
+      },
+      "flightNumber": "SV312",
+      "departure": {
+        "airportCode": "CAI",
+        "city": "开罗",
+        "date": "2026-10-03",
+        "time": "20:55",
+        "utcOffset": "+03:00"
+      },
+      "arrival": {
+        "airportCode": "RUH",
+        "city": "利雅得",
+        "date": "2026-10-03",
+        "time": "23:40",
+        "utcOffset": "+03:00"
+      }
+    },
+    {
+      "id": "sv888",
+      "journeyId": "journey-return",
+      "sequence": 2,
+      "airline": {
+        "nameZh": "沙特阿拉伯航空"
+      },
+      "flightNumber": "SV888",
+      "departure": {
+        "airportCode": "RUH",
+        "city": "利雅得",
+        "date": "2026-10-04",
+        "time": "02:20",
+        "utcOffset": "+03:00"
+      },
+      "arrival": {
+        "airportCode": "PKX",
+        "city": "北京",
+        "date": "2026-10-04",
+        "time": "17:05",
+        "utcOffset": "+08:00"
+      }
+    }
+  ],
+  "accommodations": [
+    {
+      "id": "malak",
+      "city": "开罗",
+      "name": "Malak Palace Cairo Hotel",
+      "checkIn": "2026-09-24",
+      "checkOut": "2026-09-26",
+      "nights": 2
+    },
+    {
+      "id": "steigenberger",
+      "city": "卢克索",
+      "name": "Steigenberger Nile Palace Luxor",
+      "checkIn": "2026-09-27",
+      "checkOut": "2026-09-29",
+      "nights": 2
+    },
+    {
+      "id": "arabia",
+      "city": "赫尔格达",
+      "name": "Arabia Azur Resort",
+      "checkIn": "2026-09-29",
+      "checkOut": "2026-10-02",
+      "nights": 3,
+      "notes": "Wi-Fi：Arabia@Azur1"
+    },
+    {
+      "id": "museum-nile",
+      "city": "开罗",
+      "name": "Museum And Nile View Hotel",
+      "checkIn": "2026-10-02",
+      "checkOut": "2026-10-03",
+      "nights": 1
+    }
+  ],
+  "groundTransport": {
+    "rentalCar": null,
+    "rentalChecklist": [],
+    "drivingNotes": [],
+    "drivingReferenceLinks": [],
+    "plannedRoadLegs": [],
+    "publicTransitAndRail": [
+      {
+        "id": "bus-cairo-luxor",
+        "date": "2026-09-27",
+        "operator": "Go Bus",
+        "route": "Cairo · Tahrir → Luxor",
+        "departureTime": "01:00",
+        "class": "Royal",
+        "seats": "8、9",
+        "status": "confirmed",
+        "price": {
+          "currency": "EGP",
+          "amount": 2000
+        }
+      },
+      {
+        "id": "bus-luxor-hurghada",
+        "date": "2026-09-29",
+        "operator": "White Bus",
+        "route": "Luxor → Hurghada",
+        "departureTime": "09:30",
+        "status": "pending",
+        "note": "到卢克索后购买；售票处就在Go Bus旁边。",
+        "stationAddress": "MJXV+5X2, Ramsis, Luxor City, Luxor, Luxor Governorate 1362431, Egypt"
+      },
+      {
+        "id": "bus-hurghada-cairo",
+        "date": "2026-10-02",
+        "operator": "Go Bus",
+        "route": "Hurghada → Cairo · Tahrir",
+        "departureTime": "15:05",
+        "class": "Elite DD",
+        "seats": "18、19",
+        "status": "confirmed",
+        "price": {
+          "currency": "EGP",
+          "amount": 1500
+        },
+        "stationAddress": "El-Nasr, الدهار، Hurghada 1, Red Sea Governorate 1966620, Egypt"
+      }
+    ]
+  },
+  "days": [
+    {
+      "day": 1,
+      "date": "2026-09-23",
+      "title": "北京",
+      "locations": [
+        "北京大兴国际机场"
+      ],
+      "schedule": [
+        {
+          "id": "d1-1",
+          "time": "16:30",
+          "type": "transfer",
+          "text": "前往北京大兴国际机场"
+        },
+        {
+          "id": "d1-2",
+          "time": "17:30",
+          "type": "check-in",
+          "text": "办理值机，确认行李直挂开罗"
+        },
+        {
+          "id": "d1-3",
+          "time": "20:05",
+          "type": "flight",
+          "text": "SV889 北京大兴 → 利雅得T2"
+        },
+        {
+          "id": "d1-extra-2",
+          "time": "17:30",
+          "type": "确认",
+          "text": "值机时确认托运行李标签终点为CAI，领取北京→利雅得、利雅得→开罗两段登机牌。"
+        }
+      ],
+      "prepItems": [
+        {
+          "id": "day-1-prep-1",
+          "text": "手机",
+          "completed": false
+        },
+        {
+          "id": "day-1-prep-2",
+          "text": "充电宝",
+          "completed": false
+        },
+        {
+          "id": "day-1-prep-3",
+          "text": "手机数据线",
+          "completed": false
+        },
+        {
+          "id": "day-1-prep-4",
+          "text": "水",
+          "completed": false
+        },
+        {
+          "id": "day-1-prep-5",
+          "text": "电解质",
+          "completed": false
+        },
+        {
+          "id": "day-1-prep-6",
+          "text": "防晒霜",
+          "completed": false
+        },
+        {
+          "id": "day-1-prep-7",
+          "text": "帽子",
+          "completed": false
+        },
+        {
+          "id": "day-1-prep-8",
+          "text": "墨镜",
+          "completed": false
+        },
+        {
+          "id": "day-1-prep-9",
+          "text": "湿巾",
+          "completed": false
+        },
+        {
+          "id": "day-1-prep-10",
+          "text": "纸巾",
+          "completed": false
+        },
+        {
+          "id": "day-1-prep-11",
+          "text": "少量埃镑",
+          "completed": false
+        },
+        {
+          "id": "day-1-prep-12",
+          "text": "Visa卡",
+          "completed": false
+        },
+        {
+          "id": "day-1-prep-13",
+          "text": "酒店英文地址截图",
+          "completed": false
+        },
+        {
+          "id": "day-1-prep-14",
+          "text": "当日订单/门票离线截图",
+          "completed": false
+        },
+        {
+          "id": "day-1-prep-15",
+          "text": "护照",
+          "completed": false
+        },
+        {
+          "id": "day-1-prep-16",
+          "text": "埃及电子签",
+          "completed": false
+        },
+        {
+          "id": "day-1-prep-17",
+          "text": "航班订单",
+          "completed": false
+        },
+        {
+          "id": "day-1-prep-18",
+          "text": "飞机舒适包",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "date": "2026-09-24",
+      "title": "开罗",
+      "locations": [
+        "开罗机场",
+        "哈利利市场"
+      ],
+      "schedule": [
+        {
+          "id": "d2-1",
+          "time": "01:15",
+          "type": "flight",
+          "text": "抵达利雅得T2并国际转机"
+        },
+        {
+          "id": "d2-2",
+          "time": "07:25",
+          "type": "flight",
+          "text": "SV311 利雅得T2 → 开罗T2"
+        },
+        {
+          "id": "d2-3",
+          "time": "10:10",
+          "type": "arrival",
+          "text": "抵达开罗、入境、取行李",
+          "placeId": "cairo-airport"
+        },
+        {
+          "id": "d2-4",
+          "time": "13:30",
+          "type": "check-in",
+          "text": "入住Malak Palace Cairo Hotel"
+        },
+        {
+          "id": "d2-5",
+          "time": "17:00",
+          "type": "attraction",
+          "text": "哈利利市场逛街、晚餐",
+          "placeId": "khan-khalili"
+        },
+        {
+          "id": "d2-extra-1",
+          "time": "抵达后",
+          "type": "准备",
+          "text": "机场先办入境、取行李；再换少量埃镑、办电话卡并测试网络。"
+        },
+        {
+          "id": "d2-extra-3",
+          "time": "晚上",
+          "type": "酒店",
+          "text": "Malak Palace Cairo Hotel"
+        }
+      ],
+      "prepItems": [
+        {
+          "id": "day-2-prep-1",
+          "text": "手机",
+          "completed": false
+        },
+        {
+          "id": "day-2-prep-2",
+          "text": "充电宝",
+          "completed": false
+        },
+        {
+          "id": "day-2-prep-3",
+          "text": "手机数据线",
+          "completed": false
+        },
+        {
+          "id": "day-2-prep-4",
+          "text": "水",
+          "completed": false
+        },
+        {
+          "id": "day-2-prep-5",
+          "text": "电解质",
+          "completed": false
+        },
+        {
+          "id": "day-2-prep-6",
+          "text": "防晒霜",
+          "completed": false
+        },
+        {
+          "id": "day-2-prep-7",
+          "text": "帽子",
+          "completed": false
+        },
+        {
+          "id": "day-2-prep-8",
+          "text": "墨镜",
+          "completed": false
+        },
+        {
+          "id": "day-2-prep-9",
+          "text": "湿巾",
+          "completed": false
+        },
+        {
+          "id": "day-2-prep-10",
+          "text": "纸巾",
+          "completed": false
+        },
+        {
+          "id": "day-2-prep-11",
+          "text": "少量埃镑",
+          "completed": false
+        },
+        {
+          "id": "day-2-prep-12",
+          "text": "Visa卡",
+          "completed": false
+        },
+        {
+          "id": "day-2-prep-13",
+          "text": "酒店英文地址截图",
+          "completed": false
+        },
+        {
+          "id": "day-2-prep-14",
+          "text": "当日订单/门票离线截图",
+          "completed": false
+        },
+        {
+          "id": "day-2-prep-15",
+          "text": "护照",
+          "completed": false
+        },
+        {
+          "id": "day-2-prep-16",
+          "text": "埃及电子签",
+          "completed": false
+        },
+        {
+          "id": "day-2-prep-17",
+          "text": "酒店订单",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "date": "2026-09-25",
+      "title": "开罗",
+      "locations": [
+        "吉萨金字塔群",
+        "大埃及博物馆"
+      ],
+      "schedule": [
+        {
+          "id": "d3-1",
+          "time": "08:00",
+          "type": "attraction",
+          "text": "游览金字塔群、全景平台和狮身人面像；不进入胡夫金字塔内部",
+          "placeId": "giza",
+          "ticketIds": [
+            "t-giza"
+          ]
+        },
+        {
+          "id": "d3-2",
+          "time": "13:00",
+          "type": "attraction",
+          "text": "参观大埃及博物馆GEM",
+          "placeId": "gem",
+          "ticketIds": [
+            "t-gem"
+          ]
+        },
+        {
+          "id": "d3-extra-4",
+          "time": "晚上",
+          "type": "酒店",
+          "text": "Malak Palace Cairo Hotel"
+        }
+      ],
+      "prepItems": [
+        {
+          "id": "day-3-prep-1",
+          "text": "手机",
+          "completed": false
+        },
+        {
+          "id": "day-3-prep-2",
+          "text": "充电宝",
+          "completed": false
+        },
+        {
+          "id": "day-3-prep-3",
+          "text": "手机数据线",
+          "completed": false
+        },
+        {
+          "id": "day-3-prep-4",
+          "text": "水",
+          "completed": false
+        },
+        {
+          "id": "day-3-prep-5",
+          "text": "电解质",
+          "completed": false
+        },
+        {
+          "id": "day-3-prep-6",
+          "text": "防晒霜",
+          "completed": false
+        },
+        {
+          "id": "day-3-prep-7",
+          "text": "帽子",
+          "completed": false
+        },
+        {
+          "id": "day-3-prep-8",
+          "text": "墨镜",
+          "completed": false
+        },
+        {
+          "id": "day-3-prep-9",
+          "text": "湿巾",
+          "completed": false
+        },
+        {
+          "id": "day-3-prep-10",
+          "text": "纸巾",
+          "completed": false
+        },
+        {
+          "id": "day-3-prep-11",
+          "text": "少量埃镑",
+          "completed": false
+        },
+        {
+          "id": "day-3-prep-12",
+          "text": "Visa卡",
+          "completed": false
+        },
+        {
+          "id": "day-3-prep-13",
+          "text": "酒店英文地址截图",
+          "completed": false
+        },
+        {
+          "id": "day-3-prep-14",
+          "text": "当日订单/门票离线截图",
+          "completed": false
+        },
+        {
+          "id": "day-3-prep-15",
+          "text": "护照",
+          "completed": false
+        },
+        {
+          "id": "day-3-prep-16",
+          "text": "实体学生证",
+          "completed": false
+        },
+        {
+          "id": "day-3-prep-17",
+          "text": "金字塔门票",
+          "completed": false
+        },
+        {
+          "id": "day-3-prep-18",
+          "text": "GEM预约二维码",
+          "completed": false
+        },
+        {
+          "id": "day-3-prep-19",
+          "text": "常用药",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "date": "2026-09-26",
+      "title": "开罗",
+      "locations": [
+        "萨拉丁城堡",
+        "埃及文明博物馆",
+        "Go Bus Tahrir"
+      ],
+      "schedule": [
+        {
+          "id": "d4-1",
+          "time": "08:30",
+          "type": "attraction",
+          "text": "萨拉丁城堡及穆罕默德·阿里清真寺",
+          "placeId": "citadel",
+          "ticketIds": [
+            "t-citadel"
+          ]
+        },
+        {
+          "id": "d4-2",
+          "time": "12:45",
+          "type": "attraction",
+          "text": "埃及文明博物馆NMEC",
+          "placeId": "nmec",
+          "ticketIds": [
+            "t-nmec"
+          ]
+        },
+        {
+          "id": "d4-3",
+          "time": "23:30前",
+          "type": "transfer",
+          "text": "抵达Go Bus Cairo · Tahrir候车",
+          "placeId": "tahrir"
+        },
+        {
+          "id": "d4-extra-4",
+          "time": "23:30前",
+          "type": "确认",
+          "text": "到Go Bus Tahrir核对01:00发车、Royal车型、座位8和9，行李票和车票离线保存。"
+        },
+        {
+          "id": "d4-extra-5",
+          "time": "夜间",
+          "type": "酒店",
+          "text": "夜间 Go Bus（开罗→卢克索）"
+        }
+      ],
+      "prepItems": [
+        {
+          "id": "day-4-prep-1",
+          "text": "手机",
+          "completed": false
+        },
+        {
+          "id": "day-4-prep-2",
+          "text": "充电宝",
+          "completed": false
+        },
+        {
+          "id": "day-4-prep-3",
+          "text": "手机数据线",
+          "completed": false
+        },
+        {
+          "id": "day-4-prep-4",
+          "text": "水",
+          "completed": false
+        },
+        {
+          "id": "day-4-prep-5",
+          "text": "电解质",
+          "completed": false
+        },
+        {
+          "id": "day-4-prep-6",
+          "text": "防晒霜",
+          "completed": false
+        },
+        {
+          "id": "day-4-prep-7",
+          "text": "帽子",
+          "completed": false
+        },
+        {
+          "id": "day-4-prep-8",
+          "text": "墨镜",
+          "completed": false
+        },
+        {
+          "id": "day-4-prep-9",
+          "text": "湿巾",
+          "completed": false
+        },
+        {
+          "id": "day-4-prep-10",
+          "text": "纸巾",
+          "completed": false
+        },
+        {
+          "id": "day-4-prep-11",
+          "text": "少量埃镑",
+          "completed": false
+        },
+        {
+          "id": "day-4-prep-12",
+          "text": "Visa卡",
+          "completed": false
+        },
+        {
+          "id": "day-4-prep-13",
+          "text": "酒店英文地址截图",
+          "completed": false
+        },
+        {
+          "id": "day-4-prep-14",
+          "text": "当日订单/门票离线截图",
+          "completed": false
+        },
+        {
+          "id": "day-4-prep-15",
+          "text": "护照",
+          "completed": false
+        },
+        {
+          "id": "day-4-prep-16",
+          "text": "实体学生证",
+          "completed": false
+        },
+        {
+          "id": "day-4-prep-17",
+          "text": "城堡门票",
+          "completed": false
+        },
+        {
+          "id": "day-4-prep-18",
+          "text": "文明博物馆门票",
+          "completed": false
+        },
+        {
+          "id": "day-4-prep-19",
+          "text": "Go Bus车票",
+          "completed": false
+        },
+        {
+          "id": "day-4-prep-20",
+          "text": "保暖外套",
+          "completed": false
+        },
+        {
+          "id": "day-4-prep-21",
+          "text": "颈枕",
+          "completed": false
+        },
+        {
+          "id": "day-4-prep-22",
+          "text": "眼罩",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "date": "2026-09-27",
+      "title": "卢克索",
+      "locations": [
+        "卢克索",
+        "White Bus售票处",
+        "卢克索神庙"
+      ],
+      "schedule": [
+        {
+          "id": "d5-1",
+          "time": "01:00",
+          "type": "transfer",
+          "text": "Go Bus前往卢克索，座位8、9"
+        },
+        {
+          "id": "d5-2",
+          "time": "抵达后",
+          "type": "check-in",
+          "text": "入住Steigenberger Nile Palace Luxor"
+        },
+        {
+          "id": "d5-3",
+          "time": "尽快",
+          "type": "todo",
+          "text": "到White Bus售票处购买9月29日09:30前往赫尔格达的2张车票",
+          "placeId": "whitebus-luxor"
+        },
+        {
+          "id": "d5-4",
+          "time": "18:30",
+          "type": "attraction",
+          "text": "夜游卢克索神庙",
+          "placeId": "luxor-temple",
+          "ticketIds": [
+            "t-luxor"
+          ]
+        },
+        {
+          "id": "d5-extra-1",
+          "time": "抵达后",
+          "type": "准备",
+          "text": "先确认Go Bus到站和行李完整；行李多则先到酒店寄存，再去White Bus售票处。"
+        },
+        {
+          "id": "d5-extra-2",
+          "time": "尽快",
+          "type": "购票",
+          "text": "到White Bus售票处买9月29日09:30 Luxor→Hurghada 2张票。地址：MJXV+5X2, Ramsis, Luxor City；就在Go Bus旁边。线下购票带现金和Visa卡，票价现场确认。"
+        },
+        {
+          "id": "d5-extra-3",
+          "time": "购票时",
+          "type": "确认",
+          "text": "确认准确上车点、最晚到站时间、行李收费/限额、预计抵达时间，并检查票面日期、时间和目的地。"
+        },
+        {
+          "id": "d5-extra-4",
+          "time": "今日",
+          "type": "确认",
+          "text": "确认9月28日司机07:00接；确认9月29日热气球04:40接、回酒店时间、早餐盒及去White Bus车站的车程。"
+        },
+        {
+          "id": "d5-extra-6",
+          "time": "21:00",
+          "type": "酒店",
+          "text": "Steigenberger Nile Palace Luxor"
+        }
+      ],
+      "prepItems": [
+        {
+          "id": "day-5-prep-1",
+          "text": "手机",
+          "completed": false
+        },
+        {
+          "id": "day-5-prep-2",
+          "text": "充电宝",
+          "completed": false
+        },
+        {
+          "id": "day-5-prep-3",
+          "text": "手机数据线",
+          "completed": false
+        },
+        {
+          "id": "day-5-prep-4",
+          "text": "水",
+          "completed": false
+        },
+        {
+          "id": "day-5-prep-5",
+          "text": "电解质",
+          "completed": false
+        },
+        {
+          "id": "day-5-prep-6",
+          "text": "防晒霜",
+          "completed": false
+        },
+        {
+          "id": "day-5-prep-7",
+          "text": "帽子",
+          "completed": false
+        },
+        {
+          "id": "day-5-prep-8",
+          "text": "墨镜",
+          "completed": false
+        },
+        {
+          "id": "day-5-prep-9",
+          "text": "湿巾",
+          "completed": false
+        },
+        {
+          "id": "day-5-prep-10",
+          "text": "纸巾",
+          "completed": false
+        },
+        {
+          "id": "day-5-prep-11",
+          "text": "少量埃镑",
+          "completed": false
+        },
+        {
+          "id": "day-5-prep-12",
+          "text": "Visa卡",
+          "completed": false
+        },
+        {
+          "id": "day-5-prep-13",
+          "text": "酒店英文地址截图",
+          "completed": false
+        },
+        {
+          "id": "day-5-prep-14",
+          "text": "当日订单/门票离线截图",
+          "completed": false
+        },
+        {
+          "id": "day-5-prep-15",
+          "text": "护照",
+          "completed": false
+        },
+        {
+          "id": "day-5-prep-16",
+          "text": "实体学生证",
+          "completed": false
+        },
+        {
+          "id": "day-5-prep-17",
+          "text": "White Bus购票现金",
+          "completed": false
+        },
+        {
+          "id": "day-5-prep-18",
+          "text": "White Bus购票信息",
+          "completed": false
+        },
+        {
+          "id": "day-5-prep-19",
+          "text": "卢克索神庙门票",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "date": "2026-09-28",
+      "title": "卢克索",
+      "locations": [
+        "帝王谷",
+        "女王神庙",
+        "哈布城",
+        "卡纳克神庙"
+      ],
+      "schedule": [
+        {
+          "id": "d6-extra-1-time",
+          "time": "05:45",
+          "type": "准备",
+          "text": "起床、洗漱并吃早餐；06:50到酒店大堂等候司机。"
+        },
+        {
+          "id": "d6-1",
+          "time": "07:00",
+          "type": "transfer",
+          "text": "司机酒店接，开始包车一日游"
+        },
+        {
+          "id": "d6-2",
+          "time": "07:30",
+          "type": "attraction",
+          "text": "帝王谷KV2、KV6、KV11及KV9，以当日开放为准",
+          "placeId": "valley-kings",
+          "ticketIds": [
+            "t-valley",
+            "t-kv9"
+          ]
+        },
+        {
+          "id": "d6-3",
+          "time": "10:30",
+          "type": "attraction",
+          "text": "哈特谢普苏特女王神庙",
+          "placeId": "hatshepsut",
+          "ticketIds": [
+            "t-hatshepsut"
+          ]
+        },
+        {
+          "id": "d6-4",
+          "time": "11:50",
+          "type": "attraction",
+          "text": "哈布城",
+          "placeId": "habu",
+          "ticketIds": [
+            "t-habu"
+          ]
+        },
+        {
+          "id": "d6-5",
+          "time": "14:30",
+          "type": "attraction",
+          "text": "卡纳克神庙",
+          "placeId": "karnak",
+          "ticketIds": [
+            "t-karnak"
+          ]
+        },
+        {
+          "id": "d6-6",
+          "time": "17:30",
+          "type": "activity",
+          "text": "视进度乘Felucca尼罗河日落帆船"
+        },
+        {
+          "id": "d6-extra-4",
+          "time": "上船前",
+          "type": "确认",
+          "text": "确认Felucca总价按船还是按人、时长、小费及是否返回酒店码头；景点延误则优先卡纳克、取消帆船。"
+        },
+        {
+          "id": "d6-extra-5",
+          "time": "睡前",
+          "type": "准备",
+          "text": "完成行李打包，保存White Bus车票，确认09:30上车点；热气球订单放随身包，手机/充电宝充满，设置03:50/04:00/04:10闹钟。"
+        },
+        {
+          "id": "d6-extra-6",
+          "time": "21:00前",
+          "type": "酒店",
+          "text": "Steigenberger Nile Palace Luxor"
+        }
+      ],
+      "prepItems": [
+        {
+          "id": "day-6-prep-1",
+          "text": "手机",
+          "completed": false
+        },
+        {
+          "id": "day-6-prep-2",
+          "text": "充电宝",
+          "completed": false
+        },
+        {
+          "id": "day-6-prep-3",
+          "text": "手机数据线",
+          "completed": false
+        },
+        {
+          "id": "day-6-prep-4",
+          "text": "水",
+          "completed": false
+        },
+        {
+          "id": "day-6-prep-5",
+          "text": "电解质",
+          "completed": false
+        },
+        {
+          "id": "day-6-prep-6",
+          "text": "防晒霜",
+          "completed": false
+        },
+        {
+          "id": "day-6-prep-7",
+          "text": "帽子",
+          "completed": false
+        },
+        {
+          "id": "day-6-prep-8",
+          "text": "墨镜",
+          "completed": false
+        },
+        {
+          "id": "day-6-prep-9",
+          "text": "湿巾",
+          "completed": false
+        },
+        {
+          "id": "day-6-prep-10",
+          "text": "纸巾",
+          "completed": false
+        },
+        {
+          "id": "day-6-prep-11",
+          "text": "少量埃镑",
+          "completed": false
+        },
+        {
+          "id": "day-6-prep-12",
+          "text": "Visa卡",
+          "completed": false
+        },
+        {
+          "id": "day-6-prep-13",
+          "text": "酒店英文地址截图",
+          "completed": false
+        },
+        {
+          "id": "day-6-prep-14",
+          "text": "当日订单/门票离线截图",
+          "completed": false
+        },
+        {
+          "id": "day-6-prep-15",
+          "text": "护照",
+          "completed": false
+        },
+        {
+          "id": "day-6-prep-16",
+          "text": "实体学生证",
+          "completed": false
+        },
+        {
+          "id": "day-6-prep-17",
+          "text": "帝王谷门票",
+          "completed": false
+        },
+        {
+          "id": "day-6-prep-18",
+          "text": "KV9额外票",
+          "completed": false
+        },
+        {
+          "id": "day-6-prep-19",
+          "text": "包车司机联系方式",
+          "completed": false
+        },
+        {
+          "id": "day-6-prep-20",
+          "text": "常用药",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "date": "2026-09-29",
+      "title": "卢克索 → 赫尔格达",
+      "locations": [
+        "卢克索",
+        "赫尔格达"
+      ],
+      "schedule": [
+        {
+          "id": "d7-extra-1-time",
+          "time": "03:50",
+          "type": "准备",
+          "text": "起床、洗漱；04:30到酒店大堂等候热气球接送。"
+        },
+        {
+          "id": "d7-1",
+          "time": "04:40",
+          "type": "activity",
+          "text": "King Tut酒店接，参加日出热气球"
+        },
+        {
+          "id": "d7-2",
+          "time": "08:00前",
+          "type": "return",
+          "text": "预计返回酒店，快速早餐、取行李退房"
+        },
+        {
+          "id": "d7-3",
+          "time": "09:00前",
+          "type": "transfer",
+          "text": "抵达White Bus上车点候车",
+          "placeId": "whitebus-luxor"
+        },
+        {
+          "id": "d7-4",
+          "time": "09:30",
+          "type": "transfer",
+          "text": "White Bus卢克索 → 赫尔格达；车票到卢克索后购买",
+          "placeId": "whitebus-luxor"
+        },
+        {
+          "id": "d7-5",
+          "time": "下午",
+          "type": "check-in",
+          "text": "入住Arabia Azur Resort",
+          "placeId": "arabia-resort"
+        },
+        {
+          "id": "d7-extra-2",
+          "time": "08:00前",
+          "type": "提醒",
+          "text": "热气球后快速早餐/早餐盒、取行李和退房；提前预约08:20—08:30车辆，建议09:00前到White Bus站。"
+        },
+        {
+          "id": "d7-extra-3",
+          "time": "抵达后",
+          "type": "确认",
+          "text": "办理入住、确认Wi-Fi；最晚今天预订9月30日橘子岛团，确认酒店接送、装备、救生衣、午餐、饮用水、登岛/码头费、领队电话和返程时间。"
+        },
+        {
+          "id": "d7-extra-4",
+          "time": "抵达后",
+          "type": "确认",
+          "text": "同时向沙漠观星团确认10月1日接送时间；准备浮潜包。"
+        },
+        {
+          "id": "d7-extra-5",
+          "time": "晚上",
+          "type": "酒店",
+          "text": "Arabia Azur Resort（Wi-Fi记录：Arabia@Azur1）"
+        }
+      ],
+      "prepItems": [
+        {
+          "id": "day-7-prep-1",
+          "text": "手机",
+          "completed": false
+        },
+        {
+          "id": "day-7-prep-2",
+          "text": "充电宝",
+          "completed": false
+        },
+        {
+          "id": "day-7-prep-3",
+          "text": "手机数据线",
+          "completed": false
+        },
+        {
+          "id": "day-7-prep-4",
+          "text": "水",
+          "completed": false
+        },
+        {
+          "id": "day-7-prep-5",
+          "text": "电解质",
+          "completed": false
+        },
+        {
+          "id": "day-7-prep-6",
+          "text": "防晒霜",
+          "completed": false
+        },
+        {
+          "id": "day-7-prep-7",
+          "text": "帽子",
+          "completed": false
+        },
+        {
+          "id": "day-7-prep-8",
+          "text": "墨镜",
+          "completed": false
+        },
+        {
+          "id": "day-7-prep-9",
+          "text": "湿巾",
+          "completed": false
+        },
+        {
+          "id": "day-7-prep-10",
+          "text": "纸巾",
+          "completed": false
+        },
+        {
+          "id": "day-7-prep-11",
+          "text": "少量埃镑",
+          "completed": false
+        },
+        {
+          "id": "day-7-prep-12",
+          "text": "Visa卡",
+          "completed": false
+        },
+        {
+          "id": "day-7-prep-13",
+          "text": "酒店英文地址截图",
+          "completed": false
+        },
+        {
+          "id": "day-7-prep-14",
+          "text": "当日订单/门票离线截图",
+          "completed": false
+        },
+        {
+          "id": "day-7-prep-15",
+          "text": "护照",
+          "completed": false
+        },
+        {
+          "id": "day-7-prep-16",
+          "text": "热气球订单",
+          "completed": false
+        },
+        {
+          "id": "day-7-prep-17",
+          "text": "White Bus车票",
+          "completed": false
+        },
+        {
+          "id": "day-7-prep-18",
+          "text": "早餐盒/零食",
+          "completed": false
+        },
+        {
+          "id": "day-7-prep-19",
+          "text": "轻薄外套",
+          "completed": false
+        },
+        {
+          "id": "day-7-prep-20",
+          "text": "运动鞋",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "date": "2026-09-30",
+      "title": "赫尔格达",
+      "locations": [
+        "赫尔格达",
+        "橘子岛"
+      ],
+      "schedule": [
+        {
+          "id": "d8-extra-1-time",
+          "time": "06:30—07:00",
+          "type": "准备",
+          "text": "起床、早餐；约07:30按团方通知到酒店大堂等车。"
+        },
+        {
+          "id": "d8-1",
+          "time": "待确认",
+          "type": "activity",
+          "text": "橘子岛出海＋浮潜团；最晚出发前1天预订，接送和服务内容待确认",
+          "placeIds": [
+            "arabia-resort",
+            "orange-bay"
+          ]
+        },
+        {
+          "id": "d8-extra-2",
+          "time": "出发前",
+          "type": "确认",
+          "text": "以团方通知为准，复核接车时间、酒店接送、装备、救生衣、午餐、饮用水、登岛费和返程时间。"
+        },
+        {
+          "id": "d8-extra-3",
+          "time": "安全",
+          "type": "提醒",
+          "text": "不会游泳也必须穿救生衣并提前告知领队；晕船药按说明提前服用；不踩珊瑚。"
+        },
+        {
+          "id": "d8-extra-4",
+          "time": "晚上",
+          "type": "酒店",
+          "text": "Arabia Azur Resort"
+        }
+      ],
+      "prepItems": [
+        {
+          "id": "day-8-prep-1",
+          "text": "手机",
+          "completed": false
+        },
+        {
+          "id": "day-8-prep-2",
+          "text": "充电宝",
+          "completed": false
+        },
+        {
+          "id": "day-8-prep-3",
+          "text": "手机数据线",
+          "completed": false
+        },
+        {
+          "id": "day-8-prep-4",
+          "text": "水",
+          "completed": false
+        },
+        {
+          "id": "day-8-prep-5",
+          "text": "电解质",
+          "completed": false
+        },
+        {
+          "id": "day-8-prep-6",
+          "text": "防晒霜",
+          "completed": false
+        },
+        {
+          "id": "day-8-prep-7",
+          "text": "帽子",
+          "completed": false
+        },
+        {
+          "id": "day-8-prep-8",
+          "text": "墨镜",
+          "completed": false
+        },
+        {
+          "id": "day-8-prep-9",
+          "text": "湿巾",
+          "completed": false
+        },
+        {
+          "id": "day-8-prep-10",
+          "text": "纸巾",
+          "completed": false
+        },
+        {
+          "id": "day-8-prep-11",
+          "text": "少量埃镑",
+          "completed": false
+        },
+        {
+          "id": "day-8-prep-12",
+          "text": "Visa卡",
+          "completed": false
+        },
+        {
+          "id": "day-8-prep-13",
+          "text": "酒店英文地址截图",
+          "completed": false
+        },
+        {
+          "id": "day-8-prep-14",
+          "text": "当日订单/门票离线截图",
+          "completed": false
+        },
+        {
+          "id": "day-8-prep-15",
+          "text": "泳衣",
+          "completed": false
+        },
+        {
+          "id": "day-8-prep-16",
+          "text": "速干浴巾",
+          "completed": false
+        },
+        {
+          "id": "day-8-prep-17",
+          "text": "防水袋",
+          "completed": false
+        },
+        {
+          "id": "day-8-prep-18",
+          "text": "涉水鞋",
+          "completed": false
+        },
+        {
+          "id": "day-8-prep-19",
+          "text": "防晒衣",
+          "completed": false
+        },
+        {
+          "id": "day-8-prep-20",
+          "text": "晕船药",
+          "completed": false
+        },
+        {
+          "id": "day-8-prep-21",
+          "text": "手机挂绳",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "day": 9,
+      "date": "2026-10-01",
+      "title": "赫尔格达",
+      "locations": [
+        "赫尔格达",
+        "赫尔格达沙漠"
+      ],
+      "schedule": [
+        {
+          "id": "d9-1",
+          "time": "上午",
+          "type": "rest",
+          "text": "酒店海滩、泳池或房间休息"
+        },
+        {
+          "id": "d9-2",
+          "time": "待确认",
+          "type": "activity",
+          "text": "沙漠观星半日团；最晚出发前1天预订，接送和服务内容待确认",
+          "placeId": "hurghada-desert"
+        },
+        {
+          "id": "d9-extra-1",
+          "time": "上午",
+          "type": "准备",
+          "text": "酒店休息；最晚今天完成10月1日沙漠观星团预订并确认接送、返程、晚餐、望远镜及活动内容。"
+        },
+        {
+          "id": "d9-extra-3",
+          "time": "晚上",
+          "type": "确认",
+          "text": "核对10月2日Go Bus：15:05 Hurghada→Cairo Tahrir、座位18/19、发车站；预约酒店到车站车辆并通知开罗酒店可能深夜入住。"
+        },
+        {
+          "id": "d9-extra-4",
+          "time": "晚上",
+          "type": "酒店",
+          "text": "Arabia Azur Resort"
+        }
+      ],
+      "prepItems": [
+        {
+          "id": "day-9-prep-1",
+          "text": "手机",
+          "completed": false
+        },
+        {
+          "id": "day-9-prep-2",
+          "text": "充电宝",
+          "completed": false
+        },
+        {
+          "id": "day-9-prep-3",
+          "text": "手机数据线",
+          "completed": false
+        },
+        {
+          "id": "day-9-prep-4",
+          "text": "水",
+          "completed": false
+        },
+        {
+          "id": "day-9-prep-5",
+          "text": "电解质",
+          "completed": false
+        },
+        {
+          "id": "day-9-prep-6",
+          "text": "防晒霜",
+          "completed": false
+        },
+        {
+          "id": "day-9-prep-7",
+          "text": "帽子",
+          "completed": false
+        },
+        {
+          "id": "day-9-prep-8",
+          "text": "墨镜",
+          "completed": false
+        },
+        {
+          "id": "day-9-prep-9",
+          "text": "湿巾",
+          "completed": false
+        },
+        {
+          "id": "day-9-prep-10",
+          "text": "纸巾",
+          "completed": false
+        },
+        {
+          "id": "day-9-prep-11",
+          "text": "少量埃镑",
+          "completed": false
+        },
+        {
+          "id": "day-9-prep-12",
+          "text": "Visa卡",
+          "completed": false
+        },
+        {
+          "id": "day-9-prep-13",
+          "text": "酒店英文地址截图",
+          "completed": false
+        },
+        {
+          "id": "day-9-prep-14",
+          "text": "当日订单/门票离线截图",
+          "completed": false
+        },
+        {
+          "id": "day-9-prep-15",
+          "text": "长裤",
+          "completed": false
+        },
+        {
+          "id": "day-9-prep-16",
+          "text": "包脚运动鞋",
+          "completed": false
+        },
+        {
+          "id": "day-9-prep-17",
+          "text": "轻薄长袖",
+          "completed": false
+        },
+        {
+          "id": "day-9-prep-18",
+          "text": "晚间外套",
+          "completed": false
+        },
+        {
+          "id": "day-9-prep-19",
+          "text": "围巾/头巾",
+          "completed": false
+        },
+        {
+          "id": "day-9-prep-20",
+          "text": "口罩",
+          "completed": false
+        },
+        {
+          "id": "day-9-prep-21",
+          "text": "唇膏",
+          "completed": false
+        },
+        {
+          "id": "day-9-prep-22",
+          "text": "眼药水",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "day": 10,
+      "date": "2026-10-02",
+      "title": "赫尔格达 → 开罗",
+      "locations": [
+        "赫尔格达",
+        "开罗"
+      ],
+      "schedule": [
+        {
+          "id": "d10-1",
+          "time": "14:00前",
+          "type": "transfer",
+          "text": "抵达Go Bus赫尔格达站",
+          "placeId": "gobus-hurghada"
+        },
+        {
+          "id": "d10-2",
+          "time": "15:05",
+          "type": "transfer",
+          "text": "Go Bus前往Cairo · Tahrir，座位18、19",
+          "placeId": "gobus-hurghada"
+        },
+        {
+          "id": "d10-3",
+          "time": "晚间",
+          "type": "check-in",
+          "text": "入住Museum And Nile View Hotel"
+        },
+        {
+          "id": "d10-extra-2",
+          "time": "13:15",
+          "type": "出发",
+          "text": "取行李前往Go Bus站：El-Nasr, El Dahar, Hurghada 1；建议14:00前抵达。"
+        },
+        {
+          "id": "d10-extra-3",
+          "time": "车票",
+          "type": "确认",
+          "text": "15:05 Elite DD，座位18、19；已付1,500 EGP/2人。抵达Tahrir时间受路况影响。"
+        },
+        {
+          "id": "d10-extra-4",
+          "time": "晚间",
+          "type": "酒店",
+          "text": "Museum And Nile View Hotel"
+        }
+      ],
+      "prepItems": [
+        {
+          "id": "day-10-prep-1",
+          "text": "手机",
+          "completed": false
+        },
+        {
+          "id": "day-10-prep-2",
+          "text": "充电宝",
+          "completed": false
+        },
+        {
+          "id": "day-10-prep-3",
+          "text": "手机数据线",
+          "completed": false
+        },
+        {
+          "id": "day-10-prep-4",
+          "text": "水",
+          "completed": false
+        },
+        {
+          "id": "day-10-prep-5",
+          "text": "电解质",
+          "completed": false
+        },
+        {
+          "id": "day-10-prep-6",
+          "text": "防晒霜",
+          "completed": false
+        },
+        {
+          "id": "day-10-prep-7",
+          "text": "帽子",
+          "completed": false
+        },
+        {
+          "id": "day-10-prep-8",
+          "text": "墨镜",
+          "completed": false
+        },
+        {
+          "id": "day-10-prep-9",
+          "text": "湿巾",
+          "completed": false
+        },
+        {
+          "id": "day-10-prep-10",
+          "text": "纸巾",
+          "completed": false
+        },
+        {
+          "id": "day-10-prep-11",
+          "text": "少量埃镑",
+          "completed": false
+        },
+        {
+          "id": "day-10-prep-12",
+          "text": "Visa卡",
+          "completed": false
+        },
+        {
+          "id": "day-10-prep-13",
+          "text": "酒店英文地址截图",
+          "completed": false
+        },
+        {
+          "id": "day-10-prep-14",
+          "text": "当日订单/门票离线截图",
+          "completed": false
+        },
+        {
+          "id": "day-10-prep-15",
+          "text": "护照",
+          "completed": false
+        },
+        {
+          "id": "day-10-prep-16",
+          "text": "Go Bus车票",
+          "completed": false
+        },
+        {
+          "id": "day-10-prep-17",
+          "text": "零食",
+          "completed": false
+        },
+        {
+          "id": "day-10-prep-18",
+          "text": "颈枕",
+          "completed": false
+        },
+        {
+          "id": "day-10-prep-19",
+          "text": "薄外套",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "day": 11,
+      "date": "2026-10-03",
+      "title": "开罗",
+      "locations": [
+        "埃及博物馆",
+        "开罗机场"
+      ],
+      "schedule": [
+        {
+          "id": "d11-1",
+          "time": "09:00",
+          "type": "attraction",
+          "text": "参观埃及博物馆（解放广场老馆）",
+          "placeId": "egyptian-museum",
+          "ticketIds": [
+            "t-egyptian"
+          ]
+        },
+        {
+          "id": "d11-2",
+          "time": "15:30—16:00",
+          "type": "transfer",
+          "text": "前往开罗机场T2",
+          "placeId": "cairo-airport"
+        },
+        {
+          "id": "d11-3",
+          "time": "20:55",
+          "type": "flight",
+          "text": "SV312开罗T2 → 利雅得T2"
+        },
+        {
+          "id": "d11-extra-3",
+          "time": "15:00前",
+          "type": "检查",
+          "text": "取行李前检查保险箱、插座、浴室、床下；转换插头、充电器、过滤花洒全部收回。"
+        },
+        {
+          "id": "d11-extra-4",
+          "time": "值机",
+          "type": "确认",
+          "text": "充电宝随身不托运；液体和尖锐物品按规定托运；确认托运行李标签终点为PKX。"
+        },
+        {
+          "id": "d11-extra-5",
+          "time": "夜间",
+          "type": "酒店",
+          "text": "飞机（开罗→利雅得）"
+        }
+      ],
+      "prepItems": [
+        {
+          "id": "day-11-prep-1",
+          "text": "手机",
+          "completed": false
+        },
+        {
+          "id": "day-11-prep-2",
+          "text": "充电宝",
+          "completed": false
+        },
+        {
+          "id": "day-11-prep-3",
+          "text": "手机数据线",
+          "completed": false
+        },
+        {
+          "id": "day-11-prep-4",
+          "text": "水",
+          "completed": false
+        },
+        {
+          "id": "day-11-prep-5",
+          "text": "电解质",
+          "completed": false
+        },
+        {
+          "id": "day-11-prep-6",
+          "text": "防晒霜",
+          "completed": false
+        },
+        {
+          "id": "day-11-prep-7",
+          "text": "帽子",
+          "completed": false
+        },
+        {
+          "id": "day-11-prep-8",
+          "text": "墨镜",
+          "completed": false
+        },
+        {
+          "id": "day-11-prep-9",
+          "text": "湿巾",
+          "completed": false
+        },
+        {
+          "id": "day-11-prep-10",
+          "text": "纸巾",
+          "completed": false
+        },
+        {
+          "id": "day-11-prep-11",
+          "text": "少量埃镑",
+          "completed": false
+        },
+        {
+          "id": "day-11-prep-12",
+          "text": "Visa卡",
+          "completed": false
+        },
+        {
+          "id": "day-11-prep-13",
+          "text": "酒店英文地址截图",
+          "completed": false
+        },
+        {
+          "id": "day-11-prep-14",
+          "text": "当日订单/门票离线截图",
+          "completed": false
+        },
+        {
+          "id": "day-11-prep-15",
+          "text": "护照",
+          "completed": false
+        },
+        {
+          "id": "day-11-prep-16",
+          "text": "埃及电子签",
+          "completed": false
+        },
+        {
+          "id": "day-11-prep-17",
+          "text": "实体学生证",
+          "completed": false
+        },
+        {
+          "id": "day-11-prep-18",
+          "text": "返程登机信息",
+          "completed": false
+        },
+        {
+          "id": "day-11-prep-19",
+          "text": "飞机舒适包",
+          "completed": false
+        },
+        {
+          "id": "day-11-prep-20",
+          "text": "转换插头",
+          "completed": false
+        },
+        {
+          "id": "day-11-prep-21",
+          "text": "充电器",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "day": 12,
+      "date": "2026-10-04",
+      "title": "利雅得 → 北京",
+      "locations": [
+        "利雅得",
+        "北京"
+      ],
+      "schedule": [
+        {
+          "id": "d12-1",
+          "time": "02:20",
+          "type": "flight",
+          "text": "SV888利雅得T2 → 北京大兴"
+        },
+        {
+          "id": "d12-2",
+          "time": "17:05",
+          "type": "arrival",
+          "text": "抵达北京大兴，入境取行李"
+        },
+        {
+          "id": "d12-extra-1",
+          "time": "转机",
+          "type": "提醒",
+          "text": "无须提取托运行李，跟随国际转机标识；飞机舒适包继续放座位附近。"
+        },
+        {
+          "id": "d12-extra-2",
+          "time": "飞行中",
+          "type": "舒适",
+          "text": "每1—2小时活动腿脚并补水，使用弹力袜、颈枕、腰垫、眼罩和加湿口罩。"
+        },
+        {
+          "id": "d12-extra-3",
+          "time": "抵达后",
+          "type": "检查",
+          "text": "领取托运行李，发现破损或遗漏立即在行李服务柜台登记。"
+        },
+        {
+          "id": "d12-extra-4",
+          "time": "当晚",
+          "type": "酒店",
+          "text": "返家，无酒店"
+        }
+      ],
+      "prepItems": [
+        {
+          "id": "day-12-prep-1",
+          "text": "手机",
+          "completed": false
+        },
+        {
+          "id": "day-12-prep-2",
+          "text": "充电宝",
+          "completed": false
+        },
+        {
+          "id": "day-12-prep-3",
+          "text": "手机数据线",
+          "completed": false
+        },
+        {
+          "id": "day-12-prep-4",
+          "text": "水",
+          "completed": false
+        },
+        {
+          "id": "day-12-prep-5",
+          "text": "电解质",
+          "completed": false
+        },
+        {
+          "id": "day-12-prep-6",
+          "text": "防晒霜",
+          "completed": false
+        },
+        {
+          "id": "day-12-prep-7",
+          "text": "帽子",
+          "completed": false
+        },
+        {
+          "id": "day-12-prep-8",
+          "text": "墨镜",
+          "completed": false
+        },
+        {
+          "id": "day-12-prep-9",
+          "text": "湿巾",
+          "completed": false
+        },
+        {
+          "id": "day-12-prep-10",
+          "text": "纸巾",
+          "completed": false
+        },
+        {
+          "id": "day-12-prep-11",
+          "text": "少量埃镑",
+          "completed": false
+        },
+        {
+          "id": "day-12-prep-12",
+          "text": "Visa卡",
+          "completed": false
+        },
+        {
+          "id": "day-12-prep-13",
+          "text": "酒店英文地址截图",
+          "completed": false
+        },
+        {
+          "id": "day-12-prep-14",
+          "text": "当日订单/门票离线截图",
+          "completed": false
+        },
+        {
+          "id": "day-12-prep-15",
+          "text": "护照",
+          "completed": false
+        },
+        {
+          "id": "day-12-prep-16",
+          "text": "登机牌",
+          "completed": false
+        },
+        {
+          "id": "day-12-prep-17",
+          "text": "飞机舒适包",
+          "completed": false
+        }
+      ]
+    }
+  ],
+  "places": [
+    {
+      "id": "cairo-airport",
+      "nameZh": "开罗国际机场"
+    },
+    {
+      "id": "khan-khalili",
+      "nameZh": "哈利利市场"
+    },
+    {
+      "id": "giza",
+      "nameZh": "吉萨金字塔群"
+    },
+    {
+      "id": "gem",
+      "nameZh": "大埃及博物馆"
+    },
+    {
+      "id": "citadel",
+      "nameZh": "萨拉丁城堡"
+    },
+    {
+      "id": "nmec",
+      "nameZh": "埃及文明博物馆"
+    },
+    {
+      "id": "tahrir",
+      "name": "Go Bus Cairo · Tahrir"
+    },
+    {
+      "id": "whitebus-luxor",
+      "nameZh": "White Bus卢克索售票处",
+      "address": "MJXV+5X2, Ramsis, Luxor City, Luxor, Luxor Governorate 1362431, Egypt"
+    },
+    {
+      "id": "luxor-temple",
+      "nameZh": "卢克索神庙"
+    },
+    {
+      "id": "valley-kings",
+      "nameZh": "帝王谷"
+    },
+    {
+      "id": "hatshepsut",
+      "nameZh": "哈特谢普苏特女王神庙"
+    },
+    {
+      "id": "habu",
+      "nameZh": "哈布城"
+    },
+    {
+      "id": "karnak",
+      "nameZh": "卡纳克神庙"
+    },
+    {
+      "id": "arabia-resort",
+      "name": "Arabia Azur Resort"
+    },
+    {
+      "id": "orange-bay",
+      "nameZh": "橘子岛"
+    },
+    {
+      "id": "hurghada-desert",
+      "nameZh": "赫尔格达沙漠"
+    },
+    {
+      "id": "gobus-hurghada",
+      "nameZh": "Go Bus赫尔格达站",
+      "address": "El-Nasr, الدهار، Hurghada 1, Red Sea Governorate 1966620, Egypt"
+    },
+    {
+      "id": "egyptian-museum",
+      "nameZh": "埃及博物馆（解放广场老馆）"
+    }
+  ],
+  "restaurants": [],
+  "bookingsAndTickets": [
+    {
+      "id": "e-flights",
+      "category": "航班",
+      "name": "往返航班（2人）",
+      "status": "paid",
+      "price": {
+        "currency": "CNY",
+        "amount": 12201
+      }
+    },
+    {
+      "id": "e-malak",
+      "category": "住宿",
+      "name": "Malak Palace Cairo Hotel",
+      "status": "paid",
+      "price": {
+        "currency": "CNY",
+        "amount": 930.95
+      }
+    },
+    {
+      "id": "e-luxor-hotel",
+      "category": "住宿",
+      "name": "Steigenberger Nile Palace Luxor",
+      "status": "paid",
+      "price": {
+        "currency": "CNY",
+        "amount": 1272.66
+      }
+    },
+    {
+      "id": "e-hurghada-hotel",
+      "category": "住宿",
+      "name": "Arabia Azur Resort",
+      "status": "paid",
+      "price": {
+        "currency": "CNY",
+        "amount": 3516.59
+      }
+    },
+    {
+      "id": "e-cairo-last",
+      "category": "住宿",
+      "name": "Museum And Nile View Hotel",
+      "status": "paid",
+      "price": {
+        "currency": "CNY",
+        "amount": 264.38
+      }
+    },
+    {
+      "id": "e-balloon",
+      "category": "活动",
+      "name": "King Tut热气球（2人）",
+      "status": "paid",
+      "price": {
+        "currency": "USD",
+        "amount": 135.28
+      }
+    },
+    {
+      "id": "e-visa",
+      "category": "签证",
+      "name": "埃及签证（2人）",
+      "status": "paid",
+      "price": {
+        "currency": "USD",
+        "amount": 60
+      }
+    },
+    {
+      "id": "e-car",
+      "category": "交通",
+      "name": "9月28日卢克索包车一天",
+      "status": "confirmed",
+      "price": {
+        "currency": "USD",
+        "amount": 20
+      }
+    },
+    {
+      "id": "e-bus1",
+      "category": "交通",
+      "name": "Go Bus开罗至卢克索（2人）",
+      "status": "paid",
+      "price": {
+        "currency": "EGP",
+        "amount": 2000
+      }
+    },
+    {
+      "id": "e-bus2",
+      "category": "交通",
+      "name": "Go Bus赫尔格达至开罗（2人）",
+      "status": "paid",
+      "price": {
+        "currency": "EGP",
+        "amount": 1500
+      }
+    }
+  ],
+  "ticketPlanning": {
+    "statusStorage": "local",
+    "statusStorageNote": "门票状态默认只保存在当前浏览器。",
+    "items": [
+      {
+        "id": "t-giza",
+        "day": 3,
+        "name": "吉萨金字塔基础票",
+        "requirement": "成人约700 EGP；1成人＋1学生；不买胡夫金字塔内部票",
+        "officialUrl": "https://egymonuments.com/",
+        "guidance": [
+          "优先官方电子票；如现场购买，携带Visa卡及少量现金备用",
+          "学生票需护照和有效实体学生证",
+          "价格与支付方式以购票当日官方页面/现场为准"
+        ]
+      },
+      {
+        "id": "t-gem",
+        "day": 3,
+        "name": "大埃及博物馆GEM",
+        "requirement": "advance-required",
+        "officialUrl": "https://visit-gem.com/",
+        "guidance": [
+          "官网预约入场时段并保存二维码",
+          "票价以官网支付页为准",
+          "学生携带护照和有效实体学生证"
+        ]
+      },
+      {
+        "id": "t-citadel",
+        "day": 4,
+        "name": "萨拉丁城堡",
+        "requirement": "1成人＋1学生；现场核价",
+        "officialUrl": "https://egymonuments.com/",
+        "guidance": [
+          "优先官方电子票；如现场购买，携带Visa卡及少量现金备用",
+          "学生票需护照和有效实体学生证",
+          "价格与支付方式以购票当日官方页面/现场为准"
+        ]
+      },
+      {
+        "id": "t-nmec",
+        "day": 4,
+        "name": "埃及文明博物馆",
+        "requirement": "1成人＋1学生；现场核价",
+        "officialUrl": "https://egymonuments.com/",
+        "guidance": [
+          "优先官方电子票；如现场购买，携带Visa卡及少量现金备用",
+          "学生票需护照和有效实体学生证",
+          "价格与支付方式以购票当日官方页面/现场为准"
+        ]
+      },
+      {
+        "id": "t-luxor",
+        "day": 5,
+        "name": "卢克索神庙",
+        "requirement": "成人约500 EGP、学生约250 EGP；1成人＋1学生；以购票当日官方或现场价格为准",
+        "officialUrl": "https://egymonuments.com/",
+        "guidance": [
+          "优先官方电子票；如现场购买，携带Visa卡及少量现金备用",
+          "学生票需护照和有效实体学生证",
+          "价格与支付方式以购票当日官方页面/现场为准"
+        ]
+      },
+      {
+        "id": "t-valley",
+        "day": 6,
+        "name": "帝王谷基础票",
+        "requirement": "KV2、KV6、KV11；当日开放为准",
+        "officialUrl": "https://egymonuments.com/",
+        "guidance": [
+          "优先官方电子票；如现场购买，携带Visa卡及少量现金备用",
+          "学生票需护照和有效实体学生证",
+          "价格与支付方式以购票当日官方页面/现场为准"
+        ]
+      },
+      {
+        "id": "t-kv9",
+        "day": 6,
+        "name": "KV9额外票",
+        "requirement": "220 EGP/人；学生优惠待确认",
+        "officialUrl": "https://egymonuments.com/",
+        "guidance": [
+          "优先官方电子票；如现场购买，携带Visa卡及少量现金备用",
+          "学生票需护照和有效实体学生证",
+          "价格与支付方式以购票当日官方页面/现场为准"
+        ]
+      },
+      {
+        "id": "t-hatshepsut",
+        "day": 6,
+        "name": "哈特谢普苏特女王神庙",
+        "requirement": "1成人＋1学生；现场核价",
+        "officialUrl": "https://egymonuments.com/",
+        "guidance": [
+          "优先官方电子票；如现场购买，携带Visa卡及少量现金备用",
+          "学生票需护照和有效实体学生证",
+          "价格与支付方式以购票当日官方页面/现场为准"
+        ]
+      },
+      {
+        "id": "t-habu",
+        "day": 6,
+        "name": "哈布城",
+        "requirement": "价格待核",
+        "officialUrl": "https://egymonuments.com/",
+        "guidance": [
+          "优先官方电子票；如现场购买，携带Visa卡及少量现金备用",
+          "学生票需护照和有效实体学生证",
+          "价格与支付方式以购票当日官方页面/现场为准"
+        ]
+      },
+      {
+        "id": "t-karnak",
+        "day": 6,
+        "name": "卡纳克神庙",
+        "requirement": "价格待核",
+        "officialUrl": "https://egymonuments.com/",
+        "guidance": [
+          "优先官方电子票；如现场购买，携带Visa卡及少量现金备用",
+          "学生票需护照和有效实体学生证",
+          "价格与支付方式以购票当日官方页面/现场为准"
+        ]
+      },
+      {
+        "id": "t-egyptian",
+        "day": 11,
+        "name": "埃及博物馆老馆",
+        "requirement": "1成人＋1学生；价格待核",
+        "officialUrl": "https://egymonuments.com/",
+        "guidance": [
+          "优先官方电子票；如现场购买，携带Visa卡及少量现金备用",
+          "学生票需护照和有效实体学生证",
+          "价格与支付方式以购票当日官方页面/现场为准"
+        ]
+      }
+    ]
+  },
+  "preTrip": {
+    "packingItems": [
+      {
+        "id": "pack-01",
+        "category": "证件与支付",
+        "text": "护照",
+        "completed": false
+      },
+      {
+        "id": "pack-02",
+        "category": "证件与支付",
+        "text": "埃及电子签打印件",
+        "completed": false
+      },
+      {
+        "id": "pack-03",
+        "category": "证件与支付",
+        "text": "护照首页复印件1",
+        "completed": false
+      },
+      {
+        "id": "pack-04",
+        "category": "证件与支付",
+        "text": "护照首页复印件2",
+        "completed": false
+      },
+      {
+        "id": "pack-05",
+        "category": "证件与支付",
+        "text": "实体学生证",
+        "completed": false
+      },
+      {
+        "id": "pack-06",
+        "category": "证件与支付",
+        "text": "Visa卡1",
+        "completed": false
+      },
+      {
+        "id": "pack-07",
+        "category": "证件与支付",
+        "text": "Visa卡2",
+        "completed": false
+      },
+      {
+        "id": "pack-08",
+        "category": "证件与支付",
+        "text": "美元现金",
+        "completed": false
+      },
+      {
+        "id": "pack-09",
+        "category": "证件与支付",
+        "text": "少量埃镑",
+        "completed": false
+      },
+      {
+        "id": "pack-10",
+        "category": "证件与支付",
+        "text": "旅行保险单",
+        "completed": false
+      },
+      {
+        "id": "pack-11",
+        "category": "电子设备",
+        "text": "手机",
+        "completed": false
+      },
+      {
+        "id": "pack-12",
+        "category": "电子设备",
+        "text": "充电宝",
+        "completed": false
+      },
+      {
+        "id": "pack-13",
+        "category": "电子设备",
+        "text": "手机数据线",
+        "completed": false
+      },
+      {
+        "id": "pack-14",
+        "category": "电子设备",
+        "text": "充电器",
+        "completed": false
+      },
+      {
+        "id": "pack-15",
+        "category": "电子设备",
+        "text": "转换插头",
+        "completed": false
+      },
+      {
+        "id": "pack-16",
+        "category": "电子设备",
+        "text": "相机",
+        "completed": false
+      },
+      {
+        "id": "pack-17",
+        "category": "电子设备",
+        "text": "手机/相机挂绳",
+        "completed": false
+      },
+      {
+        "id": "pack-18",
+        "category": "电子设备",
+        "text": "离线地图与订单截图",
+        "completed": false
+      },
+      {
+        "id": "pack-19",
+        "category": "飞机舒适包",
+        "text": "眼罩",
+        "completed": false
+      },
+      {
+        "id": "pack-20",
+        "category": "飞机舒适包",
+        "text": "耳塞",
+        "completed": false
+      },
+      {
+        "id": "pack-21",
+        "category": "飞机舒适包",
+        "text": "颈枕",
+        "completed": false
+      },
+      {
+        "id": "pack-22",
+        "category": "飞机舒适包",
+        "text": "腰垫",
+        "completed": false
+      },
+      {
+        "id": "pack-23",
+        "category": "飞机舒适包",
+        "text": "弹力袜",
+        "completed": false
+      },
+      {
+        "id": "pack-24",
+        "category": "飞机舒适包",
+        "text": "一次性拖鞋",
+        "completed": false
+      },
+      {
+        "id": "pack-25",
+        "category": "飞机舒适包",
+        "text": "加湿口罩",
+        "completed": false
+      },
+      {
+        "id": "pack-26",
+        "category": "飞机舒适包",
+        "text": "保温杯",
+        "completed": false
+      },
+      {
+        "id": "pack-27",
+        "category": "日常防晒与卫生",
+        "text": "防晒霜",
+        "completed": false
+      },
+      {
+        "id": "pack-28",
+        "category": "日常防晒与卫生",
+        "text": "帽子",
+        "completed": false
+      },
+      {
+        "id": "pack-29",
+        "category": "日常防晒与卫生",
+        "text": "墨镜",
+        "completed": false
+      },
+      {
+        "id": "pack-30",
+        "category": "日常防晒与卫生",
+        "text": "折叠伞",
+        "completed": false
+      },
+      {
+        "id": "pack-31",
+        "category": "日常防晒与卫生",
+        "text": "水杯",
+        "completed": false
+      },
+      {
+        "id": "pack-32",
+        "category": "日常防晒与卫生",
+        "text": "电解质",
+        "completed": false
+      },
+      {
+        "id": "pack-33",
+        "category": "日常防晒与卫生",
+        "text": "湿巾",
+        "completed": false
+      },
+      {
+        "id": "pack-34",
+        "category": "日常防晒与卫生",
+        "text": "纸巾",
+        "completed": false
+      },
+      {
+        "id": "pack-35",
+        "category": "日常防晒与卫生",
+        "text": "唇膏",
+        "completed": false
+      },
+      {
+        "id": "pack-36",
+        "category": "日常防晒与卫生",
+        "text": "眼药水",
+        "completed": false
+      },
+      {
+        "id": "pack-37",
+        "category": "日常防晒与卫生",
+        "text": "过滤花洒",
+        "completed": false
+      },
+      {
+        "id": "pack-38",
+        "category": "浮潜用品",
+        "text": "泳衣",
+        "completed": false
+      },
+      {
+        "id": "pack-39",
+        "category": "浮潜用品",
+        "text": "速干浴巾",
+        "completed": false
+      },
+      {
+        "id": "pack-40",
+        "category": "浮潜用品",
+        "text": "防水袋",
+        "completed": false
+      },
+      {
+        "id": "pack-41",
+        "category": "浮潜用品",
+        "text": "涉水鞋",
+        "completed": false
+      },
+      {
+        "id": "pack-42",
+        "category": "浮潜用品",
+        "text": "防晒衣",
+        "completed": false
+      },
+      {
+        "id": "pack-43",
+        "category": "浮潜用品",
+        "text": "晕船药",
+        "completed": false
+      },
+      {
+        "id": "pack-44",
+        "category": "沙漠用品",
+        "text": "长裤",
+        "completed": false
+      },
+      {
+        "id": "pack-45",
+        "category": "沙漠用品",
+        "text": "包脚运动鞋",
+        "completed": false
+      },
+      {
+        "id": "pack-46",
+        "category": "沙漠用品",
+        "text": "轻薄长袖",
+        "completed": false
+      },
+      {
+        "id": "pack-47",
+        "category": "沙漠用品",
+        "text": "晚间外套",
+        "completed": false
+      },
+      {
+        "id": "pack-48",
+        "category": "沙漠用品",
+        "text": "围巾/头巾",
+        "completed": false
+      },
+      {
+        "id": "pack-49",
+        "category": "沙漠用品",
+        "text": "口罩",
+        "completed": false
+      },
+      {
+        "id": "pack-50",
+        "category": "药品",
+        "text": "藿香正气",
+        "completed": false
+      },
+      {
+        "id": "pack-51",
+        "category": "药品",
+        "text": "奥美拉唑",
+        "completed": false
+      },
+      {
+        "id": "pack-52",
+        "category": "药品",
+        "text": "蒙脱石散",
+        "completed": false
+      },
+      {
+        "id": "pack-53",
+        "category": "药品",
+        "text": "晕车药",
+        "completed": false
+      },
+      {
+        "id": "pack-54",
+        "category": "药品",
+        "text": "快克",
+        "completed": false
+      },
+      {
+        "id": "pack-55",
+        "category": "药品",
+        "text": "个人处方药",
+        "completed": false
+      }
+    ],
+    "preparationsExplicitlyMentioned": [
+      "电子签已办理",
+      "往返航班行李直挂"
+    ],
+    "missingNote": "每日携带物品统一放在各日期的“出门准备”清单；飞机用品统一放在“飞机舒适包”清单。",
+    "packingVersion": "egypt-55-v2"
+  },
+  "mapLinks": {
+    "providedGoogleMapsLinks": [],
+    "note": "White Bus卢克索售票处就在Go Bus旁边。",
+    "cityLevelNavigationDisabled": false,
+    "navigationPolicy": {
+      "noNavigationTypes": [
+        "flight",
+        "note",
+        "rest"
+      ],
+      "selfNavigationTypes": [
+        "drive",
+        "return",
+        "transfer",
+        "check-in",
+        "check-out",
+        "restaurant",
+        "attraction",
+        "walk",
+        "hike"
+      ]
+    },
+    "navigationPlaces": []
+  },
+  "issuesAndUncertainties": [
+    "9月29日White Bus车票到卢克索后购买。",
+    "橘子岛团和沙漠观星团最晚出发前1天预订。",
+    "部分景点票价和学生优惠以现场为准。"
+  ],
+  "map": {
+    "schemaVersion": "1.0-lite",
+    "mapMode": "template-auto",
+    "templateId": "auto",
+    "disclaimer": "本图仅表达地点的相对方位与路线顺序，不代表真实比例或精确地理边界。",
+    "region": {
+      "id": "egypt",
+      "label": "埃及",
+      "countryCode": "EG",
+      "countryCodes": [
+        "EG"
+      ],
+      "heading": "EGYPT / 埃及",
+      "description": "开罗、卢克索与赫尔格达行程示意图"
+    },
+    "places": [
+      {
+        "id": "cairo-airport",
+        "name": "开罗国际机场",
+        "geo": {
+          "lat": 30.1219,
+          "lng": 31.4056
+        },
+        "countryCode": "EG",
+        "mapRegionId": "egypt"
+      },
+      {
+        "id": "khan-khalili",
+        "name": "哈利利市场",
+        "geo": {
+          "lat": 30.0478,
+          "lng": 31.2627
+        },
+        "countryCode": "EG",
+        "mapRegionId": "egypt"
+      },
+      {
+        "id": "giza",
+        "name": "吉萨金字塔群",
+        "geo": {
+          "lat": 29.9792,
+          "lng": 31.1342
+        },
+        "countryCode": "EG",
+        "mapRegionId": "egypt"
+      },
+      {
+        "id": "gem",
+        "name": "大埃及博物馆",
+        "geo": {
+          "lat": 29.9936,
+          "lng": 31.1195
+        },
+        "countryCode": "EG",
+        "mapRegionId": "egypt"
+      },
+      {
+        "id": "citadel",
+        "name": "萨拉丁城堡",
+        "geo": {
+          "lat": 30.0299,
+          "lng": 31.2613
+        },
+        "countryCode": "EG",
+        "mapRegionId": "egypt"
+      },
+      {
+        "id": "nmec",
+        "name": "埃及文明博物馆",
+        "geo": {
+          "lat": 30.0083,
+          "lng": 31.2482
+        },
+        "countryCode": "EG",
+        "mapRegionId": "egypt"
+      },
+      {
+        "id": "tahrir",
+        "name": "Go Bus Tahrir",
+        "geo": {
+          "lat": 30.0444,
+          "lng": 31.2357
+        },
+        "countryCode": "EG",
+        "mapRegionId": "egypt"
+      },
+      {
+        "id": "whitebus-luxor",
+        "name": "White Bus卢克索站",
+        "geo": {
+          "lat": 25.6988,
+          "lng": 32.6427
+        },
+        "countryCode": "EG",
+        "mapRegionId": "egypt"
+      },
+      {
+        "id": "luxor-temple",
+        "name": "卢克索神庙",
+        "geo": {
+          "lat": 25.6995,
+          "lng": 32.6391
+        },
+        "countryCode": "EG",
+        "mapRegionId": "egypt"
+      },
+      {
+        "id": "valley-kings",
+        "name": "帝王谷",
+        "geo": {
+          "lat": 25.7402,
+          "lng": 32.6014
+        },
+        "countryCode": "EG",
+        "mapRegionId": "egypt"
+      },
+      {
+        "id": "hatshepsut",
+        "name": "女王神庙",
+        "geo": {
+          "lat": 25.7382,
+          "lng": 32.6066
+        },
+        "countryCode": "EG",
+        "mapRegionId": "egypt"
+      },
+      {
+        "id": "habu",
+        "name": "哈布城",
+        "geo": {
+          "lat": 25.719,
+          "lng": 32.6003
+        },
+        "countryCode": "EG",
+        "mapRegionId": "egypt"
+      },
+      {
+        "id": "karnak",
+        "name": "卡纳克神庙",
+        "geo": {
+          "lat": 25.7188,
+          "lng": 32.6573
+        },
+        "countryCode": "EG",
+        "mapRegionId": "egypt"
+      },
+      {
+        "id": "gobus-hurghada",
+        "name": "Go Bus赫尔格达站",
+        "geo": {
+          "lat": 27.2579,
+          "lng": 33.8116
+        },
+        "countryCode": "EG",
+        "mapRegionId": "egypt"
+      },
+      {
+        "id": "arabia-resort",
+        "name": "Arabia Azur Resort",
+        "geo": {
+          "lat": 27.2397,
+          "lng": 33.8431
+        },
+        "countryCode": "EG",
+        "mapRegionId": "egypt"
+      },
+      {
+        "id": "orange-bay",
+        "name": "橘子岛",
+        "geo": {
+          "lat": 27.153,
+          "lng": 33.86
+        },
+        "countryCode": "EG",
+        "mapRegionId": "egypt"
+      },
+      {
+        "id": "egyptian-museum",
+        "name": "埃及博物馆",
+        "geo": {
+          "lat": 30.0478,
+          "lng": 31.2336
+        },
+        "countryCode": "EG",
+        "mapRegionId": "egypt"
+      }
+    ],
+    "routes": [
+      {
+        "id": "egypt-route",
+        "day": 1,
+        "placeIds": [
+          "cairo-airport",
+          "giza",
+          "tahrir",
+          "whitebus-luxor",
+          "luxor-temple",
+          "valley-kings",
+          "karnak",
+          "gobus-hurghada",
+          "arabia-resort",
+          "orange-bay",
+          "egyptian-museum",
+          "cairo-airport"
+        ]
+      }
+    ],
+    "dailyRoutes": [
+      {
+        "day": 2,
+        "placeIds": [
+          "cairo-airport",
+          "khan-khalili"
+        ]
+      },
+      {
+        "day": 3,
+        "placeIds": [
+          "giza",
+          "gem"
+        ]
+      },
+      {
+        "day": 4,
+        "placeIds": [
+          "citadel",
+          "nmec",
+          "tahrir"
+        ]
+      },
+      {
+        "day": 5,
+        "placeIds": [
+          "whitebus-luxor",
+          "luxor-temple"
+        ]
+      },
+      {
+        "day": 6,
+        "placeIds": [
+          "valley-kings",
+          "hatshepsut",
+          "habu",
+          "karnak"
+        ]
+      },
+      {
+        "day": 7,
+        "placeIds": [
+          "whitebus-luxor",
+          "gobus-hurghada",
+          "arabia-resort"
+        ]
+      },
+      {
+        "day": 8,
+        "placeIds": [
+          "arabia-resort",
+          "orange-bay"
+        ]
+      },
+      {
+        "day": 10,
+        "placeIds": [
+          "arabia-resort",
+          "gobus-hurghada",
+          "tahrir"
+        ]
+      },
+      {
+        "day": 11,
+        "placeIds": [
+          "egyptian-museum",
+          "cairo-airport"
+        ]
+      }
+    ]
+  }
+}
