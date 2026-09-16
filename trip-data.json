@@ -181,7 +181,9 @@
       "name": "Malak Palace Cairo Hotel",
       "checkIn": "2026-09-24",
       "checkOut": "2026-09-26",
-      "nights": 2
+      "nights": 2,
+      "placeId": "malak-hotel",
+      "mapQuery": "Malak Palace Cairo Hotel 开罗 Egypt"
     },
     {
       "id": "steigenberger",
@@ -189,7 +191,9 @@
       "name": "Steigenberger Nile Palace Luxor",
       "checkIn": "2026-09-27",
       "checkOut": "2026-09-29",
-      "nights": 2
+      "nights": 2,
+      "placeId": "steigenberger-hotel",
+      "mapQuery": "Steigenberger Nile Palace Luxor 卢克索 Egypt"
     },
     {
       "id": "arabia",
@@ -198,7 +202,9 @@
       "checkIn": "2026-09-29",
       "checkOut": "2026-10-02",
       "nights": 3,
-      "notes": "Wi-Fi：Arabia@Azur1"
+      "notes": "Wi-Fi：Arabia@Azur1",
+      "placeId": "arabia-resort",
+      "mapQuery": "Arabia Azur Resort 赫尔格达 Egypt"
     },
     {
       "id": "museum-nile",
@@ -206,7 +212,9 @@
       "name": "Museum And Nile View Hotel",
       "checkIn": "2026-10-02",
       "checkOut": "2026-10-03",
-      "nights": 1
+      "nights": 1,
+      "placeId": "museum-nile-hotel",
+      "mapQuery": "Museum And Nile View Hotel 开罗 Egypt"
     }
   ],
   "groundTransport": {
@@ -236,9 +244,7 @@
         "operator": "White Bus",
         "route": "Luxor → Hurghada",
         "departureTime": "09:30",
-        "status": "pending",
-        "note": "到卢克索后购买；售票处就在Go Bus旁边。",
-        "stationAddress": "MJXV+5X2, Ramsis, Luxor City, Luxor, Luxor Governorate 1362431, Egypt"
+        "status": "pending"
       },
       {
         "id": "bus-hurghada-cairo",
@@ -289,6 +295,12 @@
           "time": "17:30",
           "type": "确认",
           "text": "值机时确认托运行李标签终点为CAI，领取北京→利雅得、利雅得→开罗两段登机牌。"
+        },
+        {
+          "id": "d1-lodging-final",
+          "time": "夜间",
+          "type": "住宿",
+          "text": "飞机（北京 → 利雅得）"
         }
       ],
       "prepItems": [
@@ -416,7 +428,8 @@
           "id": "d2-4",
           "time": "13:30",
           "type": "check-in",
-          "text": "入住Malak Palace Cairo Hotel"
+          "text": "入住Malak Palace Cairo Hotel",
+          "placeId": "malak-hotel"
         },
         {
           "id": "d2-5",
@@ -432,10 +445,11 @@
           "text": "机场先办入境、取行李；再换少量埃镑、办电话卡并测试网络。"
         },
         {
-          "id": "d2-extra-3",
+          "id": "d2-lodging-final",
           "time": "晚上",
           "type": "酒店",
-          "text": "Malak Palace Cairo Hotel"
+          "text": "Malak Palace Cairo Hotel",
+          "placeId": "malak-hotel"
         }
       ],
       "prepItems": [
@@ -556,10 +570,11 @@
           ]
         },
         {
-          "id": "d3-extra-4",
+          "id": "d3-lodging-final",
           "time": "晚上",
           "type": "酒店",
-          "text": "Malak Palace Cairo Hotel"
+          "text": "Malak Palace Cairo Hotel",
+          "placeId": "malak-hotel"
         }
       ],
       "prepItems": [
@@ -704,10 +719,10 @@
           "text": "到Go Bus Tahrir核对01:00发车、Royal车型、座位8和9，行李票和车票离线保存。"
         },
         {
-          "id": "d4-extra-5",
+          "id": "d4-lodging-final",
           "time": "夜间",
-          "type": "酒店",
-          "text": "夜间 Go Bus（开罗→卢克索）"
+          "type": "住宿",
+          "text": "夜间 Go Bus（开罗 → 卢克索）"
         }
       ],
       "prepItems": [
@@ -843,7 +858,8 @@
           "id": "d5-2",
           "time": "抵达后",
           "type": "check-in",
-          "text": "入住Steigenberger Nile Palace Luxor"
+          "text": "入住Steigenberger Nile Palace Luxor",
+          "placeId": "steigenberger-hotel"
         },
         {
           "id": "d5-3",
@@ -887,10 +903,11 @@
           "text": "确认9月28日司机07:00接；确认9月29日热气球04:40接、回酒店时间、早餐盒及去White Bus车站的车程。"
         },
         {
-          "id": "d5-extra-6",
-          "time": "21:00",
+          "id": "d5-lodging-final",
+          "time": "晚上",
           "type": "酒店",
-          "text": "Steigenberger Nile Palace Luxor"
+          "text": "Steigenberger Nile Palace Luxor",
+          "placeId": "steigenberger-hotel"
         }
       ],
       "prepItems": [
@@ -1074,10 +1091,11 @@
           "text": "完成行李打包，保存White Bus车票，确认09:30上车点；热气球订单放随身包，手机/充电宝充满，设置03:50/04:00/04:10闹钟。"
         },
         {
-          "id": "d6-extra-6",
-          "time": "21:00前",
+          "id": "d6-lodging-final",
+          "time": "晚上",
           "type": "酒店",
-          "text": "Steigenberger Nile Palace Luxor"
+          "text": "Steigenberger Nile Palace Luxor",
+          "placeId": "steigenberger-hotel"
         }
       ],
       "prepItems": [
@@ -1205,24 +1223,10 @@
           "text": "King Tut酒店接，参加日出热气球"
         },
         {
-          "id": "d7-2",
-          "time": "08:00前",
-          "type": "return",
-          "text": "预计返回酒店，快速早餐、取行李退房"
-        },
-        {
-          "id": "d7-3",
-          "time": "09:00前",
-          "type": "transfer",
-          "text": "抵达White Bus上车点候车",
-          "placeId": "whitebus-luxor"
-        },
-        {
           "id": "d7-4",
           "time": "09:30",
           "type": "transfer",
-          "text": "White Bus卢克索 → 赫尔格达；车票到卢克索后购买",
-          "placeId": "whitebus-luxor"
+          "text": "White Bus 卢克索 → 赫尔格达"
         },
         {
           "id": "d7-5",
@@ -1230,12 +1234,6 @@
           "type": "check-in",
           "text": "入住Arabia Azur Resort",
           "placeId": "arabia-resort"
-        },
-        {
-          "id": "d7-extra-2",
-          "time": "08:00前",
-          "type": "提醒",
-          "text": "热气球后快速早餐/早餐盒、取行李和退房；提前预约08:20—08:30车辆，建议09:00前到White Bus站。"
         },
         {
           "id": "d7-extra-3",
@@ -1250,10 +1248,11 @@
           "text": "同时向沙漠观星团确认10月1日接送时间；准备浮潜包。"
         },
         {
-          "id": "d7-extra-5",
+          "id": "d7-lodging-final",
           "time": "晚上",
           "type": "酒店",
-          "text": "Arabia Azur Resort（Wi-Fi记录：Arabia@Azur1）"
+          "text": "Arabia Azur Resort（Wi-Fi：Arabia@Azur1）",
+          "placeId": "arabia-resort"
         }
       ],
       "prepItems": [
@@ -1397,10 +1396,11 @@
           "text": "不会游泳也必须穿救生衣并提前告知领队；晕船药按说明提前服用；不踩珊瑚。"
         },
         {
-          "id": "d8-extra-4",
+          "id": "d8-lodging-final",
           "time": "晚上",
           "type": "酒店",
-          "text": "Arabia Azur Resort"
+          "text": "Arabia Azur Resort",
+          "placeId": "arabia-resort"
         }
       ],
       "prepItems": [
@@ -1546,10 +1546,11 @@
           "text": "核对10月2日Go Bus：15:05 Hurghada→Cairo Tahrir、座位18/19、发车站；预约酒店到车站车辆并通知开罗酒店可能深夜入住。"
         },
         {
-          "id": "d9-extra-4",
+          "id": "d9-lodging-final",
           "time": "晚上",
           "type": "酒店",
-          "text": "Arabia Azur Resort"
+          "text": "Arabia Azur Resort",
+          "placeId": "arabia-resort"
         }
       ],
       "prepItems": [
@@ -1675,42 +1676,24 @@
       ],
       "schedule": [
         {
-          "id": "d10-1",
-          "time": "14:00前",
-          "type": "transfer",
-          "text": "抵达Go Bus赫尔格达站",
-          "placeId": "gobus-hurghada"
-        },
-        {
           "id": "d10-2",
           "time": "15:05",
           "type": "transfer",
-          "text": "Go Bus前往Cairo · Tahrir，座位18、19",
-          "placeId": "gobus-hurghada"
+          "text": "Go Bus Elite DD：Hurghada → Cairo Tahrir，座位18、19；已付1,500 EGP/2人，抵达时间受路况影响。"
         },
         {
           "id": "d10-3",
           "time": "晚间",
           "type": "check-in",
-          "text": "入住Museum And Nile View Hotel"
+          "text": "入住Museum And Nile View Hotel",
+          "placeId": "museum-nile-hotel"
         },
         {
-          "id": "d10-extra-2",
-          "time": "13:15",
-          "type": "出发",
-          "text": "取行李前往Go Bus站：El-Nasr, El Dahar, Hurghada 1；建议14:00前抵达。"
-        },
-        {
-          "id": "d10-extra-3",
-          "time": "车票",
-          "type": "确认",
-          "text": "15:05 Elite DD，座位18、19；已付1,500 EGP/2人。抵达Tahrir时间受路况影响。"
-        },
-        {
-          "id": "d10-extra-4",
+          "id": "d10-lodging-final",
           "time": "晚间",
           "type": "酒店",
-          "text": "Museum And Nile View Hotel"
+          "text": "Museum And Nile View Hotel",
+          "placeId": "museum-nile-hotel"
         }
       ],
       "prepItems": [
@@ -1856,10 +1839,10 @@
           "text": "充电宝随身不托运；液体和尖锐物品按规定托运；确认托运行李标签终点为PKX。"
         },
         {
-          "id": "d11-extra-5",
+          "id": "d11-lodging-final",
           "time": "夜间",
-          "type": "酒店",
-          "text": "飞机（开罗→利雅得）"
+          "type": "住宿",
+          "text": "飞机（开罗 → 利雅得）"
         }
       ],
       "prepItems": [
@@ -2010,9 +1993,9 @@
           "text": "领取托运行李，发现破损或遗漏立即在行李服务柜台登记。"
         },
         {
-          "id": "d12-extra-4",
+          "id": "d12-lodging-final",
           "time": "当晚",
-          "type": "酒店",
+          "type": "住宿",
           "text": "返家，无酒店"
         }
       ],
@@ -2116,7 +2099,9 @@
     },
     {
       "id": "giza",
-      "nameZh": "吉萨金字塔群"
+      "nameZh": "吉萨金字塔群",
+      "address": "X487+696, Al Ahram, Al Haram, Giza Governorate 3512101, Egypt",
+      "googleMapsQuery": "X487+696, Al Ahram, Al Haram, Giza Governorate 3512101, Egypt"
     },
     {
       "id": "gem",
@@ -2153,7 +2138,9 @@
     },
     {
       "id": "habu",
-      "nameZh": "哈布城"
+      "nameZh": "哈布城",
+      "address": "PJ92+R8Q, Al Bairat, Luxor, Luxor Governorate 1340550, Egypt",
+      "googleMapsQuery": "PJ92+R8Q, Al Bairat, Luxor, Luxor Governorate 1340550, Egypt"
     },
     {
       "id": "karnak",
@@ -2161,7 +2148,9 @@
     },
     {
       "id": "arabia-resort",
-      "name": "Arabia Azur Resort"
+      "name": "Arabia Azur Resort",
+      "address": "Arabia Azur Resort, Hurghada, Egypt",
+      "googleMapsQuery": "Arabia Azur Resort, Hurghada, Egypt"
     },
     {
       "id": "orange-bay",
@@ -2179,6 +2168,24 @@
     {
       "id": "egyptian-museum",
       "nameZh": "埃及博物馆（解放广场老馆）"
+    },
+    {
+      "id": "malak-hotel",
+      "name": "Malak Palace Cairo Hotel",
+      "address": "Malak Palace Cairo Hotel, Cairo, Egypt",
+      "googleMapsQuery": "Malak Palace Cairo Hotel, Cairo, Egypt"
+    },
+    {
+      "id": "steigenberger-hotel",
+      "name": "Steigenberger Nile Palace Luxor",
+      "address": "Steigenberger Nile Palace Luxor, Luxor, Egypt",
+      "googleMapsQuery": "Steigenberger Nile Palace Luxor, Luxor, Egypt"
+    },
+    {
+      "id": "museum-nile-hotel",
+      "name": "Museum And Nile View Hotel",
+      "address": "Museum And Nile View Hotel, Cairo, Egypt",
+      "googleMapsQuery": "Museum And Nile View Hotel, Cairo, Egypt"
     }
   ],
   "restaurants": [],
@@ -2292,133 +2299,120 @@
         "id": "t-giza",
         "day": 3,
         "name": "吉萨金字塔基础票",
-        "requirement": "成人约700 EGP；1成人＋1学生；不买胡夫金字塔内部票",
-        "officialUrl": "https://egymonuments.com/",
+        "requirement": "线下购票｜成人 700 EGP｜学生 350 EGP",
         "guidance": [
-          "优先官方电子票；如现场购买，携带Visa卡及少量现金备用",
-          "学生票需护照和有效实体学生证",
-          "价格与支付方式以购票当日官方页面/现场为准"
-        ]
+          "现场使用 Visa 卡购票",
+          "学生票需携带护照和有效实体学生证"
+        ],
+        "purchaseMode": "offline"
       },
       {
         "id": "t-gem",
         "day": 3,
         "name": "大埃及博物馆GEM",
-        "requirement": "advance-required",
+        "requirement": "线上购票｜成人 750 EGP｜学生 375 EGP",
         "officialUrl": "https://visit-gem.com/",
         "guidance": [
-          "官网预约入场时段并保存二维码",
-          "票价以官网支付页为准",
-          "学生携带护照和有效实体学生证"
-        ]
+          "提前选择入场时段并保存电子票二维码",
+          "学生票需携带护照和有效实体学生证"
+        ],
+        "purchaseMode": "online"
       },
       {
         "id": "t-citadel",
         "day": 4,
         "name": "萨拉丁城堡",
-        "requirement": "1成人＋1学生；现场核价",
-        "officialUrl": "https://egymonuments.com/",
+        "requirement": "线下购票｜成人 550 EGP｜学生 275 EGP",
         "guidance": [
-          "优先官方电子票；如现场购买，携带Visa卡及少量现金备用",
-          "学生票需护照和有效实体学生证",
-          "价格与支付方式以购票当日官方页面/现场为准"
-        ]
+          "学生票需携带护照和有效实体学生证"
+        ],
+        "purchaseMode": "offline"
       },
       {
         "id": "t-nmec",
         "day": 4,
         "name": "埃及文明博物馆",
-        "requirement": "1成人＋1学生；现场核价",
-        "officialUrl": "https://egymonuments.com/",
+        "requirement": "线下购票｜成人 550 EGP｜学生 275 EGP",
         "guidance": [
-          "优先官方电子票；如现场购买，携带Visa卡及少量现金备用",
-          "学生票需护照和有效实体学生证",
-          "价格与支付方式以购票当日官方页面/现场为准"
-        ]
+          "学生票需携带护照和有效实体学生证"
+        ],
+        "purchaseMode": "offline"
       },
       {
         "id": "t-luxor",
         "day": 5,
         "name": "卢克索神庙",
-        "requirement": "成人约500 EGP、学生约250 EGP；1成人＋1学生；以购票当日官方或现场价格为准",
-        "officialUrl": "https://egymonuments.com/",
+        "requirement": "线下购票｜成人 500 EGP｜学生 250 EGP",
         "guidance": [
-          "优先官方电子票；如现场购买，携带Visa卡及少量现金备用",
-          "学生票需护照和有效实体学生证",
-          "价格与支付方式以购票当日官方页面/现场为准"
-        ]
+          "学生票需携带护照和有效实体学生证"
+        ],
+        "purchaseMode": "offline"
       },
       {
         "id": "t-valley",
         "day": 6,
         "name": "帝王谷基础票",
-        "requirement": "KV2、KV6、KV11；当日开放为准",
+        "requirement": "线上购票｜成人 750 EGP｜学生 375 EGP",
         "officialUrl": "https://egymonuments.com/",
         "guidance": [
-          "优先官方电子票；如现场购买，携带Visa卡及少量现金备用",
-          "学生票需护照和有效实体学生证",
-          "价格与支付方式以购票当日官方页面/现场为准"
-        ]
+          "基础票包含当日开放的普通墓室；开放名单以现场为准",
+          "学生票需携带护照和有效实体学生证"
+        ],
+        "purchaseMode": "online"
       },
       {
         "id": "t-kv9",
         "day": 6,
         "name": "KV9额外票",
-        "requirement": "220 EGP/人；学生优惠待确认",
+        "requirement": "线上购票｜成人 220 EGP｜学生 110 EGP",
         "officialUrl": "https://egymonuments.com/",
         "guidance": [
-          "优先官方电子票；如现场购买，携带Visa卡及少量现金备用",
-          "学生票需护照和有效实体学生证",
-          "价格与支付方式以购票当日官方页面/现场为准"
-        ]
+          "KV9为帝王谷额外票",
+          "学生票需携带护照和有效实体学生证"
+        ],
+        "purchaseMode": "online"
       },
       {
         "id": "t-hatshepsut",
         "day": 6,
         "name": "哈特谢普苏特女王神庙",
-        "requirement": "1成人＋1学生；现场核价",
-        "officialUrl": "https://egymonuments.com/",
+        "requirement": "线下 Visa 购票｜成人 400 EGP｜学生 200 EGP",
         "guidance": [
-          "优先官方电子票；如现场购买，携带Visa卡及少量现金备用",
-          "学生票需护照和有效实体学生证",
-          "价格与支付方式以购票当日官方页面/现场为准"
-        ]
+          "学生票需携带护照和有效实体学生证"
+        ],
+        "purchaseMode": "offline"
       },
       {
         "id": "t-habu",
         "day": 6,
         "name": "哈布城",
-        "requirement": "价格待核",
-        "officialUrl": "https://egymonuments.com/",
+        "requirement": "线下购票｜学生票半价；成人票价现场确认",
         "guidance": [
-          "优先官方电子票；如现场购买，携带Visa卡及少量现金备用",
-          "学生票需护照和有效实体学生证",
-          "价格与支付方式以购票当日官方页面/现场为准"
-        ]
+          "售票点 Antiquities Inspectorate Ticket Office 与景区 Habou City / Medinet Habou 相隔约 2 km。",
+          "打车直接到售票口，让司机等一下，再把我们拉回到城门口。",
+          "学生票需携带护照和有效实体学生证"
+        ],
+        "purchaseMode": "offline"
       },
       {
         "id": "t-karnak",
         "day": 6,
         "name": "卡纳克神庙",
-        "requirement": "价格待核",
-        "officialUrl": "https://egymonuments.com/",
+        "requirement": "线下 Visa 购票｜成人 600 EGP｜学生 300 EGP",
         "guidance": [
-          "优先官方电子票；如现场购买，携带Visa卡及少量现金备用",
-          "学生票需护照和有效实体学生证",
-          "价格与支付方式以购票当日官方页面/现场为准"
-        ]
+          "学生票需携带护照和有效实体学生证"
+        ],
+        "purchaseMode": "offline"
       },
       {
         "id": "t-egyptian",
         "day": 11,
         "name": "埃及博物馆老馆",
-        "requirement": "1成人＋1学生；价格待核",
-        "officialUrl": "https://egymonuments.com/",
+        "requirement": "线下 Visa 购票｜成人 550 EGP｜学生 275 EGP",
         "guidance": [
-          "优先官方电子票；如现场购买，携带Visa卡及少量现金备用",
-          "学生票需护照和有效实体学生证",
-          "价格与支付方式以购票当日官方页面/现场为准"
-        ]
+          "学生票需携带护照和有效实体学生证"
+        ],
+        "purchaseMode": "offline"
       }
     ]
   },
@@ -2437,18 +2431,6 @@
         "completed": false
       },
       {
-        "id": "pack-03",
-        "category": "证件与支付",
-        "text": "护照首页复印件1",
-        "completed": false
-      },
-      {
-        "id": "pack-04",
-        "category": "证件与支付",
-        "text": "护照首页复印件2",
-        "completed": false
-      },
-      {
         "id": "pack-05",
         "category": "证件与支付",
         "text": "实体学生证",
@@ -2457,13 +2439,7 @@
       {
         "id": "pack-06",
         "category": "证件与支付",
-        "text": "Visa卡1",
-        "completed": false
-      },
-      {
-        "id": "pack-07",
-        "category": "证件与支付",
-        "text": "Visa卡2",
+        "text": "Visa卡（1张）",
         "completed": false
       },
       {
@@ -2760,7 +2736,7 @@
       "往返航班行李直挂"
     ],
     "missingNote": "每日携带物品统一放在各日期的“出门准备”清单；飞机用品统一放在“飞机舒适包”清单。",
-    "packingVersion": "egypt-55-v2"
+    "packingVersion": "egypt-categorized-v3"
   },
   "mapLinks": {
     "providedGoogleMapsLinks": [],
@@ -2787,7 +2763,6 @@
     "navigationPlaces": []
   },
   "issuesAndUncertainties": [
-    "9月29日White Bus车票到卢克索后购买。",
     "橘子岛团和沙漠观星团最晚出发前1天预订。",
     "部分景点票价和学生优惠以现场为准。"
   ],

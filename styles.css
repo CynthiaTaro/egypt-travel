@@ -356,14 +356,21 @@ main { overflow: hidden; }
 .drive-note-panel li + li { border-top: 1px solid var(--line); }
 .drive-note-panel li::before { content: ""; position: absolute; left: 0; top: 20px; width: 4px; height: 4px; border-radius: 50%; background: #8ca5a7; }
 
-.todo-form { display: grid; grid-template-columns: 1fr auto; gap: 8px; }
-.todo-form input { min-width: 0; min-height: 48px; padding: 0 14px; border: 1px solid var(--line); border-radius: 13px; background: rgba(255,255,255,.8); font: inherit; font-size: 13px; outline: none; }
+.todo-form { display: grid; grid-template-columns: 1fr auto; gap: 8px; margin: 12px 0 10px; }
+.todo-form input { min-width: 0; min-height: 48px; padding: 0 14px; border: 1px solid var(--line); border-radius: 13px; background: rgba(255,255,255,.8); font: inherit; font-size: 16px; outline: none; }
 .todo-form input:focus { border-color: var(--lake); box-shadow: 0 0 0 3px rgba(40,123,144,.1); }
 .todo-form button { min-width: 64px; min-height: 48px; border: 0; border-radius: 13px; color: white; background: var(--ink); cursor: pointer; font-size: 12px; font-weight: 750; }
 .todo-list { margin-top: 13px; }
 .todo-group { margin-top: 18px; padding: 14px 16px 4px; border: 1px solid var(--line); border-radius: 16px; background: rgba(255,255,255,.45); }
 .todo-group h3 { display: flex; justify-content: space-between; margin: 0 0 4px; color: var(--ink); font-size: 13px; }
 .todo-group h3 span { color: var(--muted); font: 700 10px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; }
+.todo-group__add { min-height: 44px; padding: 0 6px; border: 0; color: var(--lake); background: transparent; cursor: pointer; font-size: 12px; font-weight: 750; }
+.todo-group__header { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.todo-group__header h3 { flex: 1; }
+
+@media (max-width: 699px) {
+  input, textarea, select, .ledger-input, .ledger-select, .ledger-amount-input, .editable-kit__form input { font-size: 16px !important; }
+}
 .todo-item { min-height: 54px; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 8px; }
 .todo-item label { min-width: 0; min-height: 54px; display: flex; align-items: center; gap: 10px; cursor: pointer; }
 .todo-item input { position: absolute; opacity: 0; pointer-events: none; }

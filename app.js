@@ -526,7 +526,7 @@ function ticketRequirement(ticket) {
     "advance-required": "需提前购票",
     "advance-recommended": "建议预约",
     "needs-confirmation": "购票方式待确认"
-  })[ticket.requirement] || "门票信息";
+  })[ticket.requirement] || ticket.requirement || "门票信息";
 }
 
 function ticketTitle(ticket) {
@@ -535,7 +535,11 @@ function ticketTitle(ticket) {
 
 function ticketGuidance(ticket) {
   const guidance = ticket.guidance || ticket.notes || [];
-  return Array.isArray(guidance) ? guidance.join("·") : String(guidance || "");
+  return Array.isArray(guidance) ? guidance.join(" · ") : String(guidance || "");
+}
+
+function ticketInstruction(ticket) {
+  return [ticketRequirement(ticket), ticketGuidance(ticket)].filter(Boolean).join(" · ");
 }
 
 function ticketDocument(ticket) {
@@ -550,18 +554,22 @@ function ticketDocument(ticket) {
 function inlineTicketMarkup(ticket) {
   const purchased = isTicketPurchased(ticket);
   const title = ticketTitle(ticket);
+  const online = ticket.purchaseMode === "online" && safeExternalUrl(ticket.officialUrl || ticket.bookingUrl || "");
+  const action = online
+    ? `<a class="schedule-ticket__open" href="${escapeHtml(online)}" target="_blank" rel="noopener noreferrer">线上购票 ↗</a>`
+    : `<button type="button" class="schedule-ticket__open" data-ticket-open="${escapeHtml(ticket.id)}" aria-haspopup="dialog" aria-controls="ticket-dialog">查看</button>`;
   return `
     <div class="schedule-ticket ${purchased ? "is-purchased" : `is-${escapeHtml(ticket.requirement)}`}" data-inline-ticket="${escapeHtml(ticket.id)}">
       <label class="schedule-ticket__toggle">
         <input type="checkbox" value="${escapeHtml(ticket.id)}" ${purchased ? "checked" : ""} aria-label="${purchased ? "取消已购票" : "标记为已购票"}：${escapeHtml(title)}">
         <span class="schedule-ticket__check" aria-hidden="true">✓</span>
         <span class="schedule-ticket__content">
-          <span class="schedule-ticket__status">${purchased ? "已购票" : escapeHtml(ticketRequirement(ticket))}</span>
+          <span class="schedule-ticket__status">${purchased ? "已购票" : escapeHtml(ticket.purchaseMode === "online" ? "线上购票" : "线下购票")}</span>
           <strong>${escapeHtml(title)}</strong>
-          <small>${escapeHtml(ticketGuidance(ticket))}</small>
+          <small>${escapeHtml(ticketInstruction(ticket))}</small>
         </span>
       </label>
-      <button type="button" class="schedule-ticket__open" data-ticket-open="${escapeHtml(ticket.id)}" aria-haspopup="dialog" aria-controls="ticket-dialog">查看</button>
+      ${action}
     </div>`;
 }
 
@@ -881,17 +889,18 @@ async function loadSharedState() {
   const expectedIds = new Set(authoredTodos.map((item) => String(item.id || "")));
   const storedIds = new Set(state.todos.map((item) => String(item.id || "")));
   const storedCategories = new Set(state.todos.map((item) => String(item.category || "")).filter(Boolean));
+  const authoredCategoryCount = new Set(authoredTodos.map((item) => String(item.category || "").trim()).filter(Boolean)).size;
   const shouldReseedPacking = todoAdapter?.mode === "local" && authoredTodos.length && (
-    state.todos.length !== authoredTodos.length || storedCategories.size < 7 || [...expectedIds].some((id) => !storedIds.has(id))
+    storedCategories.size < authoredCategoryCount || [...expectedIds].some((id) => !storedIds.has(id))
   );
   if (shouldReseedPacking) {
     const completedById = new Map(state.todos.map((item) => [String(item.id), Boolean(item.completed)]));
     state.todos = authoredTodos.map((item, index) => ({
       id: String(item.id || `todo-initial-${index + 1}`),
-      category: String(item.category || "其他物品").trim(),
+      category: String(item.category || "").trim(),
       text: String(item.text || item.title || "").trim(),
       completed: completedById.get(String(item.id)) || Boolean(item.completed)
-    })).filter((item) => item.text);
+    })).filter((item) => item.category && item.text);
     const existingIds = [...storedIds].filter(Boolean);
     await Promise.all([
       ...existingIds.filter((id) => !expectedIds.has(id)).map((id) => todoAdapter.applyChange("todos", { id }, "delete")),
@@ -911,41 +920,51 @@ function saveTodoState() { return Promise.all(state.todos.map((todo) => saveShar
 function renderTodoList() {
   const completed = state.todos.filter((todo) => todo.completed).length;
   $("#todo-progress").textContent = `${completed} / ${state.todos.length}`;
-  if (!state.todos.length) {
-    $("#todo-list").innerHTML = `<p class="todo-empty">还没有准备事项，添加第一项吧。</p>`;
+  const authoredCategories = (state.data.preTrip?.packingItems || []).map((item) => item.category).filter(Boolean);
+  const storedCategories = state.todos.map((todo) => todo.category).filter(Boolean);
+  const categories = [...new Set([...authoredCategories, ...storedCategories])];
+  if (!categories.length) {
+    $("#todo-list").innerHTML = `<p class="todo-empty">还没有准备事项类别。</p>`;
     return;
   }
-  const groups = new Map();
-  state.todos.forEach((todo) => {
-    const category = todo.category || "其他物品";
-    if (!groups.has(category)) groups.set(category, []);
-    groups.get(category).push(todo);
-  });
-  $("#todo-list").innerHTML = [...groups.entries()].map(([category, todos]) => `
-    <section class="todo-group">
-      <h3>${escapeHtml(category)} <span>${todos.filter((todo) => todo.completed).length}/${todos.length}</span></h3>
-      ${todos.map((todo) => `
-        <div class="todo-item${todo.completed ? " is-complete" : ""}" data-todo-id="${escapeHtml(todo.id)}">
-          <label>
-            <input type="checkbox" ${todo.completed ? "checked" : ""} aria-label="完成：${escapeHtml(todo.text)}">
-            <span class="todo-check" aria-hidden="true">✓</span>
-            <span class="todo-text">${escapeHtml(todo.text)}</span>
-          </label>
-          <button type="button" class="todo-delete" aria-label="删除：${escapeHtml(todo.text)}">删除</button>
-        </div>`).join("")}
-    </section>`).join("");
+  $("#todo-list").innerHTML = categories.map((category) => {
+    const todos = state.todos.filter((todo) => todo.category === category);
+    return `
+      <section class="todo-group" data-todo-category="${escapeHtml(category)}">
+        <div class="todo-group__header">
+          <h3>${escapeHtml(category)} <span>${todos.filter((todo) => todo.completed).length}/${todos.length}</span></h3>
+          <button type="button" class="todo-group__add" aria-expanded="false">＋ 新增</button>
+        </div>
+        <form class="todo-form" hidden>
+          <input type="text" maxlength="80" placeholder="添加到${escapeHtml(category)}" aria-label="添加到${escapeHtml(category)}">
+          <button type="submit">添加</button>
+        </form>
+        ${todos.map((todo) => `
+          <div class="todo-item${todo.completed ? " is-complete" : ""}" data-todo-id="${escapeHtml(todo.id)}">
+            <label>
+              <input type="checkbox" ${todo.completed ? "checked" : ""} aria-label="完成：${escapeHtml(todo.text)}">
+              <span class="todo-check" aria-hidden="true">✓</span>
+              <span class="todo-text">${escapeHtml(todo.text)}</span>
+            </label>
+            <button type="button" class="todo-delete" aria-label="删除：${escapeHtml(todo.text)}">删除</button>
+          </div>`).join("")}
+      </section>`;
+  }).join("");
 }
 
 function renderTravelPrep() {
   renderTodoList();
-  $("#todo-form").onsubmit = (event) => {
+  $("#todo-list").onsubmit = (event) => {
+    const form = event.target.closest(".todo-form");
+    if (!form) return;
     event.preventDefault();
-    const input = $("#todo-input");
+    const input = form.querySelector("input");
     const text = input.value.trim();
     if (!text) return;
-    state.todos.push({ id: `todo-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`, text, completed: false });
-    input.value = "";
-    saveSharedChange("todos", state.todos.at(-1)).catch(console.error);
+    const category = form.closest("[data-todo-category]").dataset.todoCategory;
+    const todo = { id: `todo-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`, category, text, completed: false };
+    state.todos.push(todo);
+    saveSharedChange("todos", todo).catch(console.error);
     renderTodoList();
   };
   $("#todo-list").onchange = (event) => {
@@ -957,6 +976,15 @@ function renderTravelPrep() {
     renderTodoList();
   };
   $("#todo-list").onclick = (event) => {
+    const addButton = event.target.closest(".todo-group__add");
+    if (addButton) {
+      const form = addButton.closest(".todo-group").querySelector(".todo-form");
+      const opening = form.hidden;
+      form.hidden = !opening;
+      addButton.setAttribute("aria-expanded", String(opening));
+      if (opening) form.querySelector("input").focus();
+      return;
+    }
     const button = event.target.closest(".todo-delete");
     if (!button) return;
     const item = button.closest("[data-todo-id]");
@@ -999,7 +1027,9 @@ function openTicketDialog(ticketId, opener) {
   const document = ticketDocument(ticket);
   const localDocument = localAssetUrl(document?.url);
   const externalDocument = !localDocument ? safeExternalUrl(document?.url) : "";
-  const officialUrl = safeExternalUrl(ticket.officialUrl || ticket.booking?.officialUrl || ticket.booking?.purchaseUrl);
+  const officialUrl = ticket.purchaseMode === "online"
+    ? safeExternalUrl(ticket.officialUrl || ticket.booking?.officialUrl || ticket.booking?.purchaseUrl)
+    : "";
   const extension = localDocument.split(/[?#]/)[0].split(".").at(-1)?.toLocaleLowerCase();
   let preview = "";
   if (localDocument && ["png", "jpg", "jpeg", "webp", "gif", "svg"].includes(extension)) {
@@ -1013,8 +1043,8 @@ function openTicketDialog(ticketId, opener) {
     officialUrl ? `<a href="${escapeHtml(officialUrl)}" target="_blank" rel="noopener noreferrer">打开官方页面 ↗</a>` : ""
   ].filter(Boolean).join("");
   $("#ticket-dialog-body").innerHTML = `
-    <p class="ticket-dialog__status">${escapeHtml(isTicketPurchased(ticket) ? "已标记购票" : ticketRequirement(ticket))}</p>
-    ${ticketGuidance(ticket) ? `<p class="ticket-dialog__guidance">${escapeHtml(ticketGuidance(ticket))}</p>` : ""}
+    <p class="ticket-dialog__status">${escapeHtml(isTicketPurchased(ticket) ? "已标记购票" : (ticket.purchaseMode === "online" ? "线上购票" : "线下购票"))}</p>
+    <p class="ticket-dialog__guidance">${escapeHtml(ticketInstruction(ticket))}</p>
     ${preview || (!links ? `<p class="ticket-dialog__empty">当前没有可预览的票据文件或官方链接。</p>` : "")}
     ${links ? `<div class="ticket-dialog__links">${links}</div>` : ""}`;
   if (typeof dialog.showModal === "function") dialog.showModal();
